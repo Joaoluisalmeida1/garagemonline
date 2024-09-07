@@ -120,6 +120,7 @@ header nav ul li a:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .form-group label {
@@ -192,22 +193,72 @@ output {
     font-size: 1rem;
 }
 
-/* Search Button */
-.search-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #f59e42;
+/* Button Row Layout */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.left-side {
+    flex-grow: 1; /* Pushes the buttons to the left */
+}
+
+.right-side {
+    display: flex;
+    gap: 10px; /* Adds space between the two right-side buttons */
+}
+
+/* Advanced Filters Button */
+.advanced-filters {
+    background-color: transparent;
+    border: none;
+    color: #3b3b58;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.advanced-filters:hover {
+    color: #f59e42; /* Highlight in orange on hover */
+}
+
+/* Auction Button */
+.auction-button {
+    background-color: #42a5f5; /* A pleasant blue for the auction button */
     color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auction-button:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+}
+
+/* Search Button */
+.search-button {
+    background-color: #f59e42;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: #d48438;
+    background-color: #d48438; /* Darker orange on hover */
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -304,8 +355,10 @@ footer {
     width: 100%; /* Make it the same width as the input field */
     z-index: 1000; /* Ensure it appears above other content */
     padding: 0; /* Remove default padding */
-    margin-top: 5px; /* Small gap between input and suggestions */
+    margin: 5px 0 0 0;
     display: none; /* Initially hide the list when empty */
+    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
+
 }
 
 .suggestions-list li {
