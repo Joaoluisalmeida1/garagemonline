@@ -8,6 +8,11 @@
 
 </head>
 <body>
+    <!-- noUiSlider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.css">
+    <!-- noUiSlider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.js"></script>
+
     <!-- Header Section -->
      <header>
         <div class="container">
@@ -28,57 +33,73 @@
         <div class="container">
             <!-- Search Box -->
             <section class="search-section">
-                <h2>Encontre o seu próximo carro</h2>
-                <form class="search-form">
-                    <div class="form-grid">
-                        <!-- Kms Range Slider -->
-                        <div class="form-group">
-                            <label for="mileage">Kms</label>
-                            <input type="range" id="mileage" name="mileage" min="0" max="500000" value="100000" step="5000" oninput="document.getElementById('mileage-output').value = this.value">
-                            <output id="mileage-output">100000</output>
-                        </div>
+                <!-- Search Bar -->
+                <div class="form-group">
+                    <label for="car-search">Procurar carro</label>
+                    <input type="text" id="car-search" name="car-search" placeholder="Procurar">
+                </div>
             
-                        <!-- Year Range -->
-                        <div class="form-group">
-                            <label for="year">Ano</label>
-                            <input type="range" id="year" name="year" min="1980" max="2024" value="2010" step="1" oninput="document.getElementById('year-output').value = this.value">
-                            <output id="year-output">2010</output>
-                        </div>
-            
-                        <!-- Price Range Slider -->
-                        <div class="form-group">
-                            <label for="price">Preço (De)</label>
-                            <input type="range" id="price" name="price" min="0" max="100000" value="30000" step="1000" oninput="document.getElementById('price-output').value = this.value">
-                            <output id="price-output">30000</output>
-                        </div>
-            
-                        <!-- Color -->
-                        <div class="form-group">
-                            <label for="color">Cor</label>
-                            <select id="color" name="color">
-                                <option value="">Escolha uma cor</option>
-                                <option value="branco">Branco</option>
-                                <option value="preto">Preto</option>
-                                <option value="vermelho">Vermelho</option>
-                                <option value="azul">Azul</option>
-                            </select>
-                        </div>
-            
-                        <!-- Make and Model -->
-                        <div class="form-group">
-                            <label for="make">Marca</label>
-                            <input type="text" id="make" name="make" placeholder="Marca">
-                        </div>
-                        <div class="form-group">
-                            <label for="model">Modelo</label>
-                            <input type="text" id="model" name="model" placeholder="Modelo">
-                            <ul id="suggestions-list"></ul>
-                        </div>
+                <!-- Second row for make, model, submodel, and color -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="make">Marca</label>
+                        <input type="text" id="make" name="make" placeholder="Marca">
+                        <ul id="make-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Marca suggestions -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="model">Modelo</label>
+                        <input type="text" id="model" name="model" placeholder="Modelo">
+                        <ul id="model-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Modelo suggestions -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="submodel">Submodelo</label>
+                        <input type="text" id="submodel" name="submodel" placeholder="Submodelo">
+                        <ul id="submodel-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Submodelo suggestions -->
                     </div>
             
-                    <button type="submit" class="search-button">Pesquisar</button>
-                </form>
+                    <div class="form-group">
+                        <label for="color">Cor</label>
+                        <select id="color" name="color">
+                            <option value="branco">Branco</option>
+                            <option value="preto">Preto</option>
+                            <option value="vermelho">Vermelho</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <!-- Sliders for Kilómetros, Ano, Preço -->
+                <div class="form-grid range-container">
+                    <!-- Kilómetros Range Sliders -->
+                    <div class="form-group">
+                        <label for="kms-range">Kilómetros</label>
+                        <div id="kms-range"></div>
+                        <output id="kms-output">10000 - 100000</output>
+                    </div>
+                
+                    <!-- Year Range Sliders -->
+                    <div class="form-group">
+                        <label for="year-range">Ano</label>
+                        <div id="year-range"></div>
+                        <output id="year-output">2010 - 2015</output>
+                    </div>
+                
+                    <!-- Preço Range Sliders -->
+                    <div class="form-group">
+                        <label for="price-range">Preço</label>
+                        <div id="price-range"></div>
+                        <output id="price-output">10000 - 50000</output>
+                    </div>
+                </div>
+                
+                
+            
+                <!-- Search Button -->
+                <button type="submit" class="search-button"><strong>Pesquisar</strong></button>
             </section>
+            
             
             
              <section class="category-section">

@@ -90,12 +90,10 @@ header nav ul li a:hover {
 
 .search-section {
     background-color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
-    max-height: 25%;
-    margin: 0 auto;
 }
 
 .search-section h2 {
@@ -110,10 +108,18 @@ header nav ul li a:hover {
     gap: 15px;
 }
 
+.form-grid.range-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px;
+    align-items: center;
+}
+
 /* Form Group */
 .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -124,6 +130,20 @@ header nav ul li a:hover {
 
 .form-group input[type="range"] {
     width: 100%;
+    -webkit-appearance: none;
+    background: #3b3b58;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.form-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #f59e42; /* Accent orange for thumb */
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 output {
@@ -134,7 +154,7 @@ output {
     margin-top: 5px;
 }
 
-.form-group input,
+.form-group input[type="text"],
 .form-group select {
     padding: 10px;
     border: 1px solid #ccc;
@@ -142,6 +162,7 @@ output {
     font-size: 1rem;
     color: #333;
     background-color: #f4f4f9;
+    margin-bottom: 10px;
 }
 
 .form-group input[type="number"] {
@@ -154,10 +175,27 @@ output {
     border-color: #f59e42;
 }
 
+/* Range bars */
+.range-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range-container input[type="range"] {
+    width: 48%; /* Make each slider take half the space */
+}
+
+.range-container output {
+    font-weight: bold;
+    color: #f59e42;
+    font-size: 1rem;
+}
+
 /* Search Button */
 .search-button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #f59e42;
     color: white;
     border: none;
@@ -165,7 +203,6 @@ output {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
 }
 
 .search-button:hover {
@@ -233,4 +270,56 @@ footer {
 .suggestion-item:hover {
     background-color: #f59e42;
     color: white;
+}
+
+
+/* noUiSlider Custom Color */
+.noUi-connect {
+    background: #f59e42 !important; /* Orange color for the slider's filled part */
+}
+
+/* Override noUiSlider handle styles */
+.noUi-handle {
+    border: 2px solid #f59e42 !important; /* Orange border for handles */
+    background-color: white; /* White interior for handles */
+}
+
+/* Ensure the output is displayed below the slider */
+.range-container output {
+    font-weight: bold;
+    color: #f59e42;
+    text-align: center;
+    display: block; /* Make it take up the full width below */
+    margin-top: 10px;
+}
+
+/* Suggestions List Styling */
+.suggestions-list {
+    list-style: none; /* Remove default list bullets */
+    background-color: #fff; /* White background for suggestions */
+    border: 1px solid #ccc; /* Border for the suggestions list */
+    max-height: 150px; /* Limit the height and allow scrolling */
+    overflow-y: auto; /* Scrollable if the list is too long */
+    position: absolute; /* Position below the input */
+    width: 100%; /* Make it the same width as the input field */
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 0; /* Remove default padding */
+    margin-top: 5px; /* Small gap between input and suggestions */
+    display: none; /* Initially hide the list when empty */
+}
+
+.suggestions-list li {
+    padding: 10px; /* Padding for clickable area */
+    cursor: pointer; /* Make the suggestions clickable */
+    border-bottom: 1px solid #f4f4f9; /* Light border between suggestions */
+}
+
+.suggestions-list li:hover {
+    background-color: #f59e42; /* Highlight suggestion on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* When suggestions are present, display the list */
+.suggestions-list.show {
+    display: block; /* Show the suggestions list */
 }
