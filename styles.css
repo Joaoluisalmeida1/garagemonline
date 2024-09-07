@@ -29,6 +29,9 @@ header {
     background-color: #ffffff;
     padding: 15px 0;
     border-bottom: 1px solid #f4f4f9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .container {
@@ -227,7 +230,7 @@ output {
 
 /* Auction Button */
 .auction-button {
-    background-color: #42a5f5; /* A pleasant blue for the auction button */
+    background-color: #2d68a3; /* A pleasant blue for the auction button */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -357,6 +360,31 @@ footer {
     margin-top: 50px;
 }
 
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+footer .social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-icon img:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+
+footer .social-icon img {
+    background-color: transparent; /* Ensure no background */
+    fill: #333; /* Make the SVG icon color match the footer */
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
 /* Suggestions bar */
 
 #suggestions-list {
@@ -379,6 +407,16 @@ footer {
 .suggestion-item:hover {
     background-color: #f59e42;
     color: white;
+}
+
+.suggestions-list.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 
@@ -435,3 +473,110 @@ footer {
     display: block; /* Show the suggestions list */
 }
 
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.advanced-filters-form .form-group {
+    margin-bottom: 15px;
+}
+
+.advanced-filters-form label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.advanced-filters-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* . */
+/* For car Listings */
+/* . */
+
+.car-listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.car-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.car-info h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #4a4a4a;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #f59e42;
+    color: white;
+}

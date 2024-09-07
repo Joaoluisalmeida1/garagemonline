@@ -33,11 +33,7 @@
         <div class="container">
             <!-- Search Box -->
             <section class="search-section">
-                <!-- Search Bar -->
-                <div class="form-group">
-                    <label for="car-search">Procurar carro</label>
-                    <input type="text" id="car-search" name="car-search" placeholder="Procurar">
-                </div>
+
             
                 <!-- Second row for make, model, submodel, and color -->
                 <div class="form-grid">
@@ -101,6 +97,69 @@
                     <div class="left-side">
                         <button class="advanced-filters">Filtros Avançados</button>
                     </div>
+                    <div id="advanced-filters-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h3>Filtros Avançados</h3>
+                            <form class="advanced-filters-form">
+                                <div class="form-group">
+                                    <label for="gearbox">Caixa de Velocidades</label>
+                                    <select id="gearbox">
+                                        <option value="manual">Manual</option>
+                                        <option value="automatic">Automático</option>
+                                        <option value="semi-automatic">Semi-Automático</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="first-owner">Primeiro Dono</label>
+                                    <select id="first-owner">
+                                        <option value="yes">Sim</option>
+                                        <option value="no">Não</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="fuel-type">Tipo de Combustível</label>
+                                    <select id="fuel-type">
+                                        <option value="petrol">Gasolina</option>
+                                        <option value="diesel">Diesel</option>
+                                        <option value="electric">Elétrico</option>
+                                        <option value="hybrid">Híbrido</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="accidents">Acidentes</label>
+                                    <select id="accidents">
+                                        <option value="none">Sem Acidentes</option>
+                                        <option value="with">Acidentado</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="body-type">Tipo de Carroçaria</label>
+                                    <select id="body-type">
+                                        <option value="sedan">Sedan</option>
+                                        <option value="coupe">Coupé</option>
+                                        <option value="hatchback">Hatchback</option>
+                                        <option value="convertible">Convertível</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="door-count">Número de Portas</label>
+                                    <select id="door-count">
+                                        <option value="2">2</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                    
+                                <button type="submit" class="search-button">Aplicar Filtros</button>
+                            </form>
+                        </div>
+                    </div>
                     <div class="right-side">
                         <button class="auction-button">Ir para Leilões</button>
                         <button type="submit" class="search-button"><strong>Pesquisar</strong></button>
@@ -129,11 +188,20 @@
      </main>
 
      <!-- Footer Section -->
-      <footer>
+     <footer>
         <div class="container">
+            <div class="social-links">
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="mailto:youremail@example.com" class="social-icon">
+                    <img src="images/email-icon.png" alt="Email">
+                </a>
+            </div>
             <p>&copy; 2024 Garagem Virtual. Todos os direitos reservados.</p>
         </div>
-      </footer>
+    </footer>
+    
 
       <script src="script.js"></script>
 </body>

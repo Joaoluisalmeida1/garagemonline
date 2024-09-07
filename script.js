@@ -157,3 +157,26 @@ modelInput.addEventListener('change', function() {
         }
     });
 });
+
+
+// Get modal element and open/close buttons
+const modal = document.getElementById('advanced-filters-modal');
+const openButton = document.querySelector('.advanced-filters');
+const closeButton = document.querySelector('.close-button');
+
+// Open modal
+openButton.addEventListener('click', function() {
+    modal.style.display = 'flex';
+});
+
+// Close modal
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
