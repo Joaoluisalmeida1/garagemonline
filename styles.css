@@ -598,7 +598,7 @@ about
 .sobre-page .box-section {
     background-color: #ffffff; /* White background for each box */
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px; /* Space between sections */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 }
