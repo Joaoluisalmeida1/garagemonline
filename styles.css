@@ -580,3 +580,94 @@ footer .social-icon img {
     background-color: #f59e42;
     color: white;
 }
+
+
+/* .
+about
+. */
+
+/* Team Section */
+/* Scoped styles for the Sobre page */
+
+.sobre-page {
+    padding: 20px;
+}
+
+.sobre-page section {
+    margin-top: 20px;
+}
+
+.sobre-page h1, .sobre-page h2 {
+    color: #3b3b58; /* Dark gray-blue for headings */
+}
+
+.sobre-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sobre-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sobre-page h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-page p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Team Section Scoped to the Sobre page */
+.sobre-page .team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.sobre-page .team-member {
+    text-align: center;
+    max-width: 200px;
+}
+
+.sobre-page .team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sobre-page .team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.sobre-page .team-member p {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Footer Social Links for Sobre Page */
+.sobre-page footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sobre-page footer .social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.sobre-page footer .social-icon img:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
