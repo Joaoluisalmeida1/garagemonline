@@ -589,12 +589,18 @@ about
 /* Team Section */
 /* Scoped styles for the Sobre page */
 
-.sobre-page {
-    padding: 30px;
+.sobre-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.sobre-page section {
-    margin-top: 30px;
+.sobre-page .box-section {
+    background-color: #ffffff; /* White background for each box */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 }
 
 .sobre-page h1, .sobre-page h2 {
@@ -608,27 +614,59 @@ about
 }
 
 .sobre-page h1 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     margin-bottom: 30px;
     text-align: center;
 }
 
 .sobre-page h2 {
-    font-size: 3.0rem;
+    font-size: 2.0rem;
     margin-bottom: 20px;
 }
 
 .sobre-page p {
     font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 20px;
 }
 
-/* Team Section Scoped to the Sobre page */
-.sobre-page .team {
+.sobre-page .values-section .values-grid {
     display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
+    gap: 20px; /* Space between the boxes */
+    justify-content: space-between;
+}
+
+/* Individual Value Box */
+.sobre-page .value-box {
+    flex: 1; /* Makes all boxes the same width */
+    background-color: #f4f4f9; /* Slightly lighter background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center; /* Center text for a cleaner look */
+}
+
+.sobre-page .value-box h3 {
+    font-size: 1.3rem;
+    color: #3b3b58;
+    margin-bottom: 10px;
+}
+
+.sobre-page .value-box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Team Section */
+.sobre-page .team h2 {
+    text-align: center; /* Center the title above the team */
+    margin-bottom: 30px; /* Add some space below the title */
+}
+
+.sobre-page .team-members {
+    display: flex;
+    justify-content: space-around; /* Distribute the team members evenly */
+    margin-top: 20px; /* Space between the title and team members */
 }
 
 .sobre-page .team-member {
@@ -653,6 +691,7 @@ about
     font-size: 1rem;
     color: #888;
 }
+
 
 /* Footer Social Links for Sobre Page */
 .sobre-page footer .social-links {
