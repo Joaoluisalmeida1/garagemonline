@@ -3,6 +3,24 @@
 --------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* ---------------------------------------------
+    Color Palette
+--------------------------------------------- */
+:root {
+    --primary-color: #f59e42;  /* Accent orange */
+    --primary-color-dark: #d48438;  /* Darker orange */
+    --secondary-color: #3b3b58;  /* Dark gray-blue */
+    --background-color: #f4f4f9;  /* Soft background */
+    --text-color: #4a4a4a;  /* Soft dark gray text */
+    --border-color: #ccc;  /* Light border color */
+    --button-bg-color: #2d68a3;  /* Button background blue */
+    --button-bg-hover-color: #1e88e5;  /* Button hover background blue */
+    --footer-bg-color: #333;  /* Dark footer background */
+    --white-color: #ffffff;  /* White */
+    --lighter-text-color: #888;
+    --light-text-color: #666;
+}
+
 
 /* ---------------------------------------------
     Global Styles
@@ -15,8 +33,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9; /* Soft background */
-    color: #4a4a4a; /* Soft dark gray text */
+    background-color: var(--background-color); /* Soft background */
+    color: var(--text-color); /* Soft dark gray text */
     padding: 0px;
 }
 
@@ -34,9 +52,10 @@ body {
 --------------------------------------------- */
 
 header {
-    background-color: #ffffff;
+
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--background-color);
     padding: 15px 0;
-    border-bottom: 1px solid #f4f4f9;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -51,14 +70,14 @@ header .container {
 header .logo h1 {
     font-weight: 600;
     font-size: 24px;
-    color: #3b3b58; /* Dark gray-blue for the logo */
+    color: var(--secondary-color);
     display: inline-block;
     margin: 0;
 }
 
 header .logo .dot {
     font-size: 32px; /* Bigger dot */
-    color: #f59e42; /* Accent orange for the dot */
+    color: var(--primary-color);
 }
 
 header nav ul {
@@ -73,20 +92,20 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #4a4a4a;
+    color: var(--text-color);
     font-weight: 500;
     font-size: 16px;
 }
 
 header nav ul li a:hover {
-    color: #f59e42; /* Accent color hover effect */
+    color: var(--primary-color);
 }
 
 /* Login Button */
 
 .login-button {
-    background-color: #f59e42; /* Accent color for login button */
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 600;
@@ -94,7 +113,7 @@ header nav ul li a:hover {
 }
 
 .login-button:hover {
-    background-color: #d48438; /* Darker orange on hover */
+    background-color: var(--primary-color-dark);
     color: white
 }
 
@@ -103,7 +122,7 @@ header nav ul li a:hover {
 --------------------------------------------- */
 
 .search-section {
-    background-color: #ffffff;
+    background-color: var(--white-color);    
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,8 +132,7 @@ header nav ul li a:hover {
 .search-section h2 {
     font-size: 1.6rem;
     margin-bottom: 15px;
-    color: #3b3b58;
-}
+    color: var(--secondary-color);}
 
 /* Form Grid Layout */
 
@@ -145,13 +163,12 @@ header nav ul li a:hover {
 .form-group label {
     font-weight: 500;
     margin-bottom: 5px;
-    color: #4a4a4a;
-}
+    color: var(--text-color);}
 
 .form-group input[type="range"] {
     width: 100%;
     -webkit-appearance: none;
-    background: #3b3b58;
+    background: var(--secondary-color);
     height: 5px;
     border-radius: 5px;
 }
@@ -161,7 +178,7 @@ header nav ul li a:hover {
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: #f59e42; /* Accent orange for thumb */
+    background-color: var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -169,7 +186,7 @@ header nav ul li a:hover {
 output {
     font-weight: bold;
     font-size: 1rem;
-    color: #f59e42;
+    color: var(--primary-color);
     text-align: center;
     margin-top: 5px;
 }
@@ -177,11 +194,11 @@ output {
 .form-group input[type="text"],
 .form-group select {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;
-    color: #333;
-    background-color: #f4f4f9;
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
     margin-bottom: 10px;
 }
 
@@ -192,7 +209,7 @@ output {
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #f59e42;
+    border-color: var(--primary-color);
 }
 
 /* Range bars container */
@@ -209,7 +226,7 @@ output {
 
 .range-container output {
     font-weight: bold;
-    color: #f59e42;
+    color: var(--primary-color);
     font-size: 1rem;
 }
 
@@ -238,7 +255,7 @@ output {
 .advanced-filters {
     background-color: transparent;
     border: none;
-    color: #3b3b58;
+    color: var(--secondary-color);
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -246,13 +263,13 @@ output {
 }
 
 .advanced-filters:hover {
-    color: #f59e42; /* Highlight in orange on hover */
+    color: var(--primary-color); /* Highlight in orange on hover */
 }
 
 /* Auction Button */
 
 .auction-button {
-    background-color: #2d68a3; /* A pleasant blue for the auction button */
+    background-color: var(--button-bg-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -264,14 +281,14 @@ output {
 }
 
 .auction-button:hover {
-    background-color: #1e88e5; /* Darker blue on hover */
+    background-color: var(--button-bg-color);
 }
 
 /* Search Button */
 
 .search-button {
-    background-color: #f59e42;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -282,7 +299,7 @@ output {
 }
 
 .search-button:hover {
-    background-color: #d48438; /* Darker orange on hover */
+    background-color: var(--primary-color-dark);
 }
 
 
@@ -384,8 +401,8 @@ output {
 --------------------------------------------- */
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--footer-bg-color);
+    color: var(--white-color);
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -576,7 +593,7 @@ select {
 
 /* Modal content box */
 .modal-content {
-    background-color: white;
+    background-color: var(--white-color);
     padding: 30px;
     border-radius: 10px;
     width: 400px;
@@ -611,7 +628,7 @@ select {
 .advanced-filters-form select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
@@ -620,9 +637,9 @@ select {
     max-height: 300px; /* Adjust height to limit the size */
     overflow-y: auto; /* Enable vertical scrolling */
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--white-color);
 }
 
 /* Optional: Customize the scrollbar */
@@ -631,17 +648,17 @@ select {
 }
 
 .advanced-filters-container::-webkit-scrollbar-thumb {
-    background-color: #f59e42;
+    background-color: var(--primary-color);
     border-radius: 5px;
 }
 
 .advanced-filters-container::-webkit-scrollbar-track {
-    background-color: #f4f4f9;
+    background-color: var(--background-color);
 }
 
 /* Style for the submit button */
 .submit-advanced-filters {
-    background-color: #f59e42; /* Accent color */
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -655,7 +672,7 @@ select {
 }
 
 .submit-advanced-filters:hover {
-    background-color: #d48438; /* Darker orange on hover */
+    background-color: var(--primary-color); /* Change this */
 }
 
 /* Align the button at the bottom */
@@ -678,10 +695,10 @@ select {
 }
 
 .car-card {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 20px;
-    background-color: white;
+    background-color: var(--white-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -707,16 +724,16 @@ select {
 .pagination a {
     margin: 0 10px;
     padding: 10px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     text-decoration: none;
-    color: #4a4a4a;
+    color: var(--text-color);
     transition: background-color 0.3s ease;
 }
 
 .pagination a:hover {
-    background-color: #f59e42;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 
@@ -734,7 +751,7 @@ about
 }
 
 .sobre-page .box-section {
-    background-color: #ffffff; /* White background for each box */
+    background-color: var(--white-color); /* White background for each box */
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 20px; /* Space between sections */
@@ -742,7 +759,7 @@ about
 }
 
 .sobre-page h1, .sobre-page h2 {
-    color: #3b3b58; /* Dark gray-blue for headings */
+    color: var(--secondary-color);
 }
 
 .sobre-page .container {
@@ -776,7 +793,7 @@ about
 /* Individual Value Box */
 .sobre-page .value-box {
     flex: 1; /* Makes all boxes the same width */
-    background-color: #f4f4f9; /* Slightly lighter background */
+    background-color: var(--background-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
@@ -785,13 +802,13 @@ about
 
 .sobre-page .value-box h3 {
     font-size: 1.3rem;
-    color: #3b3b58;
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
 .sobre-page .value-box p {
     font-size: 1rem;
-    color: #666;
+    color: var(--light-text-color)
 }
 
 
@@ -827,7 +844,7 @@ about
 
 .sobre-page .team-member p {
     font-size: 1rem;
-    color: #888;
+    color: var(--lighter-text-color)
 }
 
 
