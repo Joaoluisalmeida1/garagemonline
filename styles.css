@@ -704,6 +704,11 @@ select {
     flex-grow: 1
 }
 
+.forum-posts .container {
+    display: flex;
+    gap: 20px; /* Space between main content and sidebar */
+}
+
 /* Example for icon data on each box */
 .forum-box.geral::before { content: '📢'; }
 .forum-box.spotting::before { content: '🚗'; }
@@ -730,13 +735,18 @@ select {
     margin: 20px 0;
 }
 
+/* Main forum content section */
 .forum-content {
-    flex: 2;
-    margin-right: 20px;
+    flex: 3; /* Take 3 parts of the available width */
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post {
     display: flex;
+    align-items: flex-start;
     background-color: var(--white-color);
     padding: 20px;
     border-radius: 10px;
@@ -749,7 +759,7 @@ select {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .voting button {
@@ -767,9 +777,27 @@ select {
     color: var(--primary-color-dark);
 }
 
+.upvote, .downvote {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-color);
+}
+
+.upvote:hover, .downvote:hover {
+    color: var(--primary-color);
+}
+
 .voting .votes {
     font-weight: bold;
     margin: 5px 0;
+}
+
+.votes {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .post-details {
@@ -793,12 +821,14 @@ select {
 .post-meta {
     font-size: 0.9rem;
     color: var(--light-text-color);
+    margin-bottom: 15px;
 }
 
 .post-body {
     margin-top: 10px;
     font-size: 1rem;
     color: var(--text-color);
+    margin-bottom: 15px;
 }
 
 .comment-link {
@@ -817,7 +847,7 @@ select {
 .sidebar {
     flex: 1;
     padding: 20px;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -829,7 +859,7 @@ select {
 .sidebar-section h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 .sidebar-section ul {
@@ -838,7 +868,7 @@ select {
 }
 
 .sidebar-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 10px;   
 }
 
 .sidebar-section ul li a {
@@ -847,12 +877,14 @@ select {
 }
 
 .sidebar-section ul li a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
 }
 
 .sidebar-section p {
     font-size: 0.9rem;
-    color: var(--text-color);
+    color: var(--white-color);
+
 }
 
 /* Mobile Responsive */
