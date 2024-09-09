@@ -364,3 +364,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Toggle favorite status
+document.querySelectorAll('.favorite-button').forEach(button => {
+    button.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+});

@@ -31,3 +31,155 @@ TEST1
     --light-text-color: #666; /* Lighter gray text */
     --lighter-text-color: #888; /* Even lighter gray text */
 }
+
+
+TEST2 (Supermodern)
+
+:root {
+    --primary-color: #00BFA5; /* Mint Green */
+    --primary-color-dark: #00897B; /* Darker Mint */
+    --secondary-color: #37474F; /* Cool dark gray */
+    --background-color: #F9FBE7; /* Light pastel background */
+    --text-color: #263238; /* Charcoal text */
+    --border-color: #CFD8DC; /* Light border */
+    --button-bg-color: #FF5252; /* Vibrant Coral */
+    --button-bg-hover-color: #FF1744; /* Darker Coral */
+    --footer-bg-color: #263238; /* Charcoal footer */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #757575; /* Light gray text */
+    --lighter-text-color: #9E9E9E; /* Even lighter gray */
+}
+
+TEST3 (minimalist)
+
+:root {
+    --primary-color: #B0BEC5; /* Light muted blue-gray */
+    --primary-color-dark: #78909C; /* Darker muted blue-gray */
+    --secondary-color: #37474F; /* Dark blue-gray */
+    --background-color: #FAFAFA; /* Almost white background */
+    --text-color: #212121; /* Dark muted gray text */
+    --border-color: #E0E0E0; /* Light gray for borders */
+    --button-bg-color: #8D6E63; /* Soft brown for buttons */
+    --button-bg-hover-color: #6D4C41; /* Darker soft brown */
+    --footer-bg-color: #424242; /* Dark gray for footer */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #9E9E9E; /* Light gray text */
+    --lighter-text-color: #BDBDBD; /* Lighter gray text */
+}
+
+
+TEST4 (cyberpunk)
+
+:root {
+    --primary-color: #FF00FF; /* Neon Pink */
+    --primary-color-dark: #D500F9; /* Dark Neon Pink */
+    --secondary-color: #00E676; /* Neon Green */
+    --background-color: #121212; /* Near black background */
+    --text-color: #FFFFFF; /* Bright white text */
+    --border-color: #333333; /* Dark borders */
+    --button-bg-color: #18FFFF; /* Neon Cyan */
+    --button-bg-hover-color: #00E5FF; /* Bright Neon Cyan */
+    --footer-bg-color: #212121; /* Dark gray footer */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #B3B3B3; /* Muted light gray */
+    --lighter-text-color: #757575; /* Muted dark gray */
+}
+
+Test5 (Nightmode)
+
+:root {
+    --primary-color: #37474F; /* Dark blue-gray */
+    --primary-color-dark: #263238; /* Even darker blue-gray */
+    --secondary-color: #B0BEC5; /* Light gray-blue */
+    --background-color: #121212; /* Dark background */
+    --text-color: #ECEFF1; /* Light gray text */
+    --border-color: #424242; /* Dark border */
+    --button-bg-color: #546E7A; /* Muted teal */
+    --button-bg-hover-color: #455A64; /* Darker muted teal */
+    --footer-bg-color: #263238; /* Very dark footer */
+    --white-color: #ECEFF1; /* White (lighter) */
+    --light-text-color: #B0BEC5; /* Soft gray text */
+    --lighter-text-color: #CFD8DC; /* Lighter muted gray */
+}
+
+Test6 (Calm)
+
+:root {
+    --primary-color: #4CAF50; /* Fresh green */
+    --primary-color-dark: #388E3C; /* Forest green */
+    --secondary-color: #795548; /* Soft brown */
+    --background-color: #F1F8E9; /* Pale greenish background */
+    --text-color: #37474F; /* Dark muted blue-gray */
+    --border-color: #A1887F; /* Light brown-gray */
+    --button-bg-color: #FFCC80; /* Soft peach for buttons */
+    --button-bg-hover-color: #FFA726; /* Bright peach hover */
+    --footer-bg-color: #6D4C41; /* Warm brown footer */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #8D6E63; /* Light brown text */
+    --lighter-text-color: #BCAAA4; /* Very light brown */
+}
+
+test7 (luxury)
+
+:root {
+    --primary-color: #FFD700; /* Gold */
+    --primary-color-dark: #DAA520; /* Dark Gold */
+    --secondary-color: #2C3E50; /* Deep dark blue */
+    --background-color: #F5F5F5; /* Light gray background */
+    --text-color: #2C3E50; /* Deep dark blue text */
+    --border-color: #B0BEC5; /* Soft gray for borders */
+    --button-bg-color: #8E44AD; /* Royal purple for buttons */
+    --button-bg-hover-color: #7D3C98; /* Darker royal purple */
+    --footer-bg-color: #2C3E50; /* Deep dark blue */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #BDC3C7; /* Soft gray text */
+    --lighter-text-color: #EAEAEA; /* Very light gray */
+}
+
+test8 (pasteldream)
+
+:root {
+    --primary-color: #FFB3BA; /* Soft Pink */
+    --primary-color-dark: #FF80AB; /* Deeper Pink */
+    --secondary-color: #FFDFBA; /* Light Peach */
+    --background-color: #FFFACD; /* Light lemon background */
+    --text-color: #555555; /* Muted dark gray */
+    --border-color: #FFE4E1; /* Light pastel pink border */
+    --button-bg-color: #BAE1FF; /* Light baby blue */
+    --button-bg-hover-color: #82CFFD; /* Bright baby blue */
+    --footer-bg-color: #FFD1DC; /* Soft pastel pink */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #D4A5A5; /* Light pink text */
+    --lighter-text-color: #FCE7E7; /* Very light pink */
+}
+
+test9 (techblue)
+
+:root {
+    --primary-color: #2979FF; /* Bright blue */
+    --primary-color-dark: #1E88E5; /* Darker blue */
+    --secondary-color: #64B5F6; /* Light blue */
+    --background-color: #E3F2FD; /* Very light blue background */
+    --text-color: #0D47A1; /* Dark blue */
+    --border-color: #BBDEFB; /* Soft blue border */
+    --button-bg-color: #29B6F6; /* Bright sky blue */
+    --button-bg-hover-color: #039BE5; /* Darker sky blue */
+    --footer-bg-color: #1565C0; /* Dark blue footer */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #90CAF9; /* Light blue-gray text */
+    --lighter-text-color: #E1F5FE; /* Lightest blue */
+}
+
+ATUAL (red)
+
+:root {
+    --primary-color: #e63946; /* Bold red */
+    --secondary-color: #2c2c2c; /* Charcoal gray */
+    --neutral-color: #f5f5f5; /* Light gray background */
+    --text-color: #2c2c2c; /* Charcoal text */
+    --border-color: #e0e0e0; /* Light gray border */
+    --button-bg-color: #e63946; /* Red button */
+    --button-bg-hover-color: #2c2c2c; /* Charcoal hover */
+    --footer-bg-color: #2c2c2c; /* Charcoal footer */
+    --white-color: #ffffff; /* White */
+}

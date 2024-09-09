@@ -3,76 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Listings</title>
+    <title>Garagem Online</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
+    <!-- noUiSlider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.css">
+    <!-- noUiSlider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.4.0/nouislider.min.js"></script>
 
-<header>
-    <div class="container">
-        <div class="logo">
-            <h1>Garagem Online<span class="dot">.</span></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Fórum</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Carros Vendidos</a></li>
-                <li><a href="#" class="login-button">Login</a></li>
-            </ul>
-        </nav>
-    </div>
-    </header>
-
-<main>
-    <div class="container">
-        <h2>Car Listings</h2>
-        <div class="car-listing-grid">
-            <!-- Static example of cars -->
-            <div class="car-card">
-                <img src="images/car1.jpg" alt="Car Image">
-                <div class="car-info">
-                    <h3>Mercedes-Benz A-Class</h3>
-                    <p>Preço: €25,000</p>
-                    <p>Ano: 2020</p>
-                </div>
+    <!-- Header Section -->
+     <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>Garagem Online<span class="dot">.</span></h1></a>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html">Fórum</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Carros Vendidos</a></li>
+                    <li><a href="#" class="login-button">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+     <main>
+        <div class="container">
+            <!-- Search Box -->
+            <section class="search-section">
 
-            <div class="car-card">
-                <img src="images/car2.jpg" alt="Car Image">
-                <div class="car-info">
-                    <h3>BMW 3 Series</h3>
-                    <p>Preço: €30,000</p>
-                    <p>Ano: 2021</p>
+            
+                <!-- Second row for make, model, submodel, and color -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="make">Marca</label>
+                        <input type="text" id="make" name="make" placeholder="Marca">
+                        <button class="dropdown-button" id="make-dropdown">&#x25BC;</button>
+                        <ul id="make-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Marca suggestions -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="model">Modelo</label>
+                        <input type="text" id="model" name="model" placeholder="Modelo" disabled>
+                        <button class="dropdown-button" id="model-dropdown" disabled>&#x25BC;</button>
+                        <ul id="model-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Modelo suggestions -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="submodel">Submodelo</label>
+                        <input type="text" id="submodel" name="submodel" placeholder="Submodelo" disabled>
+                        <button class="dropdown-button" id="submodel-dropdown" disabled>&#x25BC;</button>
+                        <ul id="submodel-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Submodelo suggestions -->
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="color">Cor</label>
+                        <select id="color" name="color">
+                            <option value="branco">Qualquer</option>
+                            <option value="branco">Branco</option>
+                            <option value="preto">Preto</option>
+                            <option value="vermelho">Vermelho</option>
+                            <option value="azul">Azul</option>
+                            <option value="cinzento">Cinzento</option>
+                            <option value="prata">Prata</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarelo">Amarelo</option>
+                            <option value="laranja">Laranja</option>
+                            <option value="castanho">Castanho</option>
+                            <option value="dourado">Dourado</option>
+                            <option value="bege">Bege</option>
+                            <option value="champanhe">Champanhe</option>
+                            <option value="roxo">Roxo</option>
+                            <option value="rosa">Rosa</option>
+                            <option value="creme">Creme</option>
+                            <option value="azul-escuro">Azul Escuro</option>
+                            <option value="vermelho-escuro">Vermelho Escuro</option>
+                            <option value="verde-escuro">Verde Escuro</option>
+                            <option value="preto-metálico">Preto Metálico</option>
+                            <option value="cinza-metálico">Cinzento Metálico</option>
+                            <option value="azul-metálico">Azul Metálico</option>
+                            <option value="vermelho-metálico">Vermelho Metálico</option>
+                            <option value="castanho-metálico">Castanho Metálico</option>
+                            <option value="verde-metálico">Verde Metálico</option>
+                            <option value="prata-metálico">Prata Metálico</option>
+                            <option value="dourado-metálico">Dourado Metálico</option>
+                            <option value="cinza-antracite">Cinzento Antracite</option>
+                            <option value="cinza-grafite">Cinzento Grafite</option>
+                            <option value="branco-pérola">Branco Pérola</option>
+                        </select>
+                    </div>
+                    
                 </div>
+            
+                <!-- Sliders for Kilómetros, Ano, Preço -->
+                <div class="form-grid range-container">
+                    <!-- Kilómetros Range Sliders -->
+                    <div class="form-group">
+                        <label for="kms-range">Kilómetros</label>
+                        <div id="kms-range"></div>
+                        <output id="kms-output">10000 - 100000</output>
+                    </div>
+                
+                    <!-- Year Range Sliders -->
+                    <div class="form-group">
+                        <label for="year-range">Ano</label>
+                        <div id="year-range"></div>
+                        <output id="year-output">2010 - 2015</output>
+                    </div>
+                
+                    <!-- Preço Range Sliders -->
+                    <div class="form-group">
+                        <label for="price-range">Preço</label>
+                        <div id="price-range"></div>
+                        <output id="price-output">10000€ - 50000€</output>
+                    </div>
+                </div>
+                
+                
+            
+                <!-- Last row with buttons -->
+                <div class="form-grid button-row">
+                    <div class="left-side">
+                        <button class="advanced-filters">Filtros Avançados</button>
+                    </div>
+                    <div id="advanced-filters-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h3>Filtros Avançados</h3>
+                            <div class="advanced-filters-container">
+                                <form class="advanced-filters-form">
+                                    <!-- Gearbox Type -->
+                                    <div class="form-group">
+                                        <label for="gearbox">Caixa de Velocidades</label>
+                                        <select id="gearbox">
+                                            <option value="manual">Manual</option>
+                                            <option value="automatic">Automático</option>
+                                            <option value="semi-automatic">Semi-Automático</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- First Owner -->
+                                    <div class="form-group">
+                                        <label for="first-owner">Primeiro Dono</label>
+                                        <select id="first-owner">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Fuel Type -->
+                                    <div class="form-group">
+                                        <label for="fuel-type">Tipo de Combustível</label>
+                                        <select id="fuel-type">
+                                            <option value="petrol">Gasolina</option>
+                                            <option value="diesel">Diesel</option>
+                                            <option value="electric">Elétrico</option>
+                                            <option value="hybrid">Híbrido</option>
+                                            <option value="gas">GPL (Gás)</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Body Type -->
+                                    <div class="form-group">
+                                        <label for="body-type">Tipo de Carroçaria</label>
+                                        <select id="body-type">
+                                            <option value="sedan">Sedan</option>
+                                            <option value="coupe">Coupé</option>
+                                            <option value="hatchback">Hatchback</option>
+                                            <option value="convertible">Convertível</option>
+                                            <option value="suv">SUV</option>
+                                            <option value="wagon">Carrinha</option>
+                                            <option value="pickup">Pickup</option>
+                                            <option value="van">Van</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Number of Doors -->
+                                    <div class="form-group">
+                                        <label for="door-count">Número de Portas</label>
+                                        <select id="door-count">
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Interior Color -->
+                                    <div class="form-group">
+                                        <label for="interior-color">Cor Interior</label>
+                                        <select id="interior-color">
+                                            <option value="preto">Preto</option>
+                                            <option value="cinzento">Cinzento</option>
+                                            <option value="branco">Branco</option>
+                                            <option value="bege">Bege</option>
+                                            <option value="castanho">Castanho</option>
+                                            <option value="vermelho">Vermelho</option>
+                                            <option value="azul">Azul</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Upholstery -->
+                                    <div class="form-group">
+                                        <label for="upholstery">Estofos</label>
+                                        <select id="upholstery">
+                                            <option value="fabric">Tecido</option>
+                                            <option value="leather">Couro</option>
+                                            <option value="alcantara">Alcantara</option>
+                                            <option value="synthetic">Couro Sintético</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Drivetrain -->
+                                    <div class="form-group">
+                                        <label for="drivetrain">Tipo de Tração</label>
+                                        <select id="drivetrain">
+                                            <option value="fwd">Tração Dianteira (FWD)</option>
+                                            <option value="rwd">Tração Traseira (RWD)</option>
+                                            <option value="awd">Tração às 4 Rodas (AWD)</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Climate Control -->
+                                    <div class="form-group">
+                                        <label for="climate-control">Ar Condicionado</label>
+                                        <select id="climate-control">
+                                            <option value="manual">Manual</option>
+                                            <option value="automatic">Automático</option>
+                                            <option value="none">Sem Ar Condicionado</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Sunroof -->
+                                    <div class="form-group">
+                                        <label for="sunroof">Teto de Abrir</label>
+                                        <select id="sunroof">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Parking Sensors -->
+                                    <div class="form-group">
+                                        <label for="parking-sensors">Sensores de Estacionamento</label>
+                                        <select id="parking-sensors">
+                                            <option value="front-rear">Frente e Traseira</option>
+                                            <option value="rear">Apenas Traseira</option>
+                                            <option value="none">Sem Sensores</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Navigation System -->
+                                    <div class="form-group">
+                                        <label for="navigation-system">Sistema de Navegação</label>
+                                        <select id="navigation-system">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Cruise Control -->
+                                    <div class="form-group">
+                                        <label for="cruise-control">Controlador de Velocidade (Cruise Control)</label>
+                                        <select id="cruise-control">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Xenon/LED Lights -->
+                                    <div class="form-group">
+                                        <label for="lights">Faróis</label>
+                                        <select id="lights">
+                                            <option value="xenon">Xenon</option>
+                                            <option value="led">LED</option>
+                                            <option value="halogen">Halogéneo</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Reverse Camera -->
+                                    <div class="form-group">
+                                        <label for="reverse-camera">Câmara de Marcha Atrás</label>
+                                        <select id="reverse-camera">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Towing Hook -->
+                                    <div class="form-group">
+                                        <label for="towing-hook">Gancho de Reboque</label>
+                                        <select id="towing-hook">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group submit-button-group">
+                                        <button type="submit" class="submit-advanced-filters">Aplicar Filtros</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <button class="auction-button">Ir para Leilões</button>
+                        <a href="car-listings.html"><button type="submit" class="search-button"><strong>Pesquisar</strong></button></a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div class="container">
+            <h2>Carros à Venda</h2>
+            <div class="form-group">
+                <label for="sort-by">Ordenar por:</label>
+                <div class="label-car-listing">
+                    
+                </div>
+                <select id="sort-by" name="sort-by">
+                    <option value="preco-asc">Preço: Menor para Maior</option>
+                    <option value="preco-desc">Preço: Maior para Menor</option>
+                    <option value="ano-recente">Ano: Mais Recente</option>
+                    <option value="ano-antigo">Ano: Mais Antigo</option>
+                </select>
             </div>
+    
+            <!-- Car listing grid -->
+            <div class="car-listing-grid">
+                <!-- Repeat car listing cards here -->
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <!-- Add more listings -->
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Porto</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Ovar</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Sintra</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/series3.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>BMW Series 3</h3>
+                        <p>Preço: €55,000</p>
+                        <p>Ano: 2024</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Mercedes-Benz A-Class</h3>
+                        <p>Preço: €25,000</p>
+                        <p>Ano: 2020</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 30,000 km</p>
+                        <p>Localização: Lisboa</p>
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                        </button>
+                    </div>
+                </div>
 
-            <!-- More car listings here -->
+            </div>
+    
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#">&#171; Anterior</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">Seguinte &#187;</a>
+            </div>
         </div>
+     </main>
 
-        <!-- Pagination -->
-        <div class="pagination">
-            <a href="#">&#171; Previous</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">Next &#187;</a>
+     <!-- Footer Section -->
+     <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="mailto:youremail@example.com" class="social-icon">
+                    <img src="images/email-icon.png" alt="Email">
+                </a>
+            </div>
+            <p>&copy; 2024 Garagem Virtual. Todos os direitos reservados.</p>
         </div>
-    </div>
-</main>
+    </footer>
+    
 
-<footer>
-    <div class="container">
-        <div class="social-links">
-            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
-                <img src="images/twitter.png" alt="Twitter">
-            </a>
-            <a href="mailto:youremail@example.com" class="social-icon">
-                <img src="images/email-icon.png" alt="Email">
-            </a>
-        </div>
-        <p>&copy; 2024 Garagem Virtual. Todos os direitos reservados.</p>
-    </div>
-</footer>
-
+      <script src="script.js"></script>
 </body>
 </html>
