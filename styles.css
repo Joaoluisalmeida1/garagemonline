@@ -27,6 +27,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color); /* Soft background */
@@ -42,6 +48,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    flex: 1
 }
 
 /* ---------------------------------------------
@@ -56,6 +63,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    margin-bottom: 10px;
 }
 
 header .container {
@@ -356,7 +364,9 @@ footer {
     color: var(--white-color);
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
 }
 
 footer .social-links {
@@ -626,6 +636,81 @@ select {
     justify-content: center; /* Center horizontally */
     margin-top: 20px;
 }
+
+
+/* ---------------------------------------------
+    Forum Section
+--------------------------------------------- */
+.forum-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.forum-box {
+    background-color: var(--primary-color); 
+    color: var(--white-color);
+    border-radius: 15px;
+    padding: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow to give depth */
+    cursor: pointer;
+    position: relative;
+
+}
+
+.forum-box:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+
+}
+
+.forum-box::before {
+    content: attr(data-icon);
+    font-size: 2.5rem;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    opacity: 0.2; /* Large semi-transparent icon in the background */
+}
+
+/* Style for the forum-section background */
+.main-forum {
+    flex-grow: 1;
+    background: linear-gradient(120deg, var(--secondary-color-light), var(--background-color));
+}
+
+/* Example for icon data on each box */
+.forum-box.geral::before { content: '📢'; }
+.forum-box.spotting::before { content: '🚗'; }
+.forum-box.buy-sell::before { content: '💸'; }
+.forum-box.mechanics::before { content: '🔧'; }
+.forum-box.diy::before { content: '🔨'; }
+.forum-box.events::before { content: '🎉'; }
+.forum-box.electric::before { content: '🔋'; }
+.forum-box.old-cars::before { content: '🚙'; }
+.forum-box.modifications::before { content: '🔩'; }
+.forum-box.opinions::before { content: '📝'; }
+.forum-box.memes::before { content: '😂'; }
+.forum-box.roast::before { content: '🔥'; }
+
+/* Make sure each box takes the full height and width available */
+.forum-box {
+    height: 150px;
+}
+
+
 
 
 /* . */
