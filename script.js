@@ -39,7 +39,7 @@ noUiSlider.create(priceSlider, {
     connect: true,
     range: {
         'min': 0,
-        'max': 1000000
+        'max': 500000
     },
     step: 1000
 });
@@ -255,3 +255,45 @@ submodelInput.addEventListener('input', function() {
     const submodels = carSubmodels[selectedModel] || [];
     showSuggestions(submodels.filter(submodel => submodel.toLowerCase().includes(submodelInput.value.toLowerCase())), submodelSuggestions, submodelInput);
 });
+
+
+
+
+// CONTENT BOXES
+
+
+const categories = {
+    classics: ['images/classics1.jpg', 'images/classics2.jpg', 'images/classics3.jpg'],
+    suvs: ['images/suvs1.jpg', 'images/suvs2.jpg', 'images/suvs3.jpg'],
+    economical: ['images/economical1.jpg', 'images/economical2.jpg', 'images/economical3.jpg'],
+    electric: ['images/electric1.png', 'images/electric2.jpg', 'images/electric3.jpg'],
+    hybrid: ['images/hybrid1.jpg', 'images/hybrid2.jpg', 'images/hybrid3.jpg'],
+    luxury: ['images/luxury1.jpg', 'images/luxury2.jpg', 'images/luxury3.png'],
+    convertibles: ['images/convertibles1.jpg', 'images/convertibles2.jpg', 'images/convertibles3.jpg'],
+    pickups: ['images/pickups1.jpg', 'images/pickups2.jpg', 'images/pickups3.jpg'],
+    sports: ['images/sports1.jpg', 'images/sports2.jpg', 'images/sports3.jpg'],
+    offroad: ['images/offroad1.jpg', 'images/offroad2.jpg', 'images/offroad3.jpg'],
+    compact: ['images/compact1.png', 'images/compact2.jpg', 'images/compact3.jpg'],
+    vans: ['images/vans1.jpg', 'images/vans2.png', 'images/vans3.jpg']
+};
+
+// Function to set the initial image and start rotating the background images
+const changeBackground = (category, images) => {
+    let currentIndex = 0;
+    const element = document.querySelector(`.${category}`);
+
+    // Set the initial image immediately
+    element.style.backgroundImage = `url(${images[currentIndex]})`;
+
+    // Start rotating the images every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        element.style.backgroundImage = `url(${images[currentIndex]})`;
+    }, 5000); // Change image every 5 seconds
+};
+
+// Apply this to each category
+for (const category in categories) {
+    changeBackground(category, categories[category]);
+}
+

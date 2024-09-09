@@ -329,66 +329,21 @@ output {
     width: 100%;
     height: 200px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease-in-out;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start; /* Align items to the top */
     font-size: 1.2rem;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: background-image 2.5s ease-in-out, opacity 2.5s ease-in-out;
+
 }
 
 .category-box:hover {
     opacity: 0.9; /* Slight hover effect */
-}
-
-/* Custom background images for each category */
-.classics {
-    background-image: url('images/classics.jpg');
-}
-
-.suvs {
-    background-image: url('images/suvs.jpg');
-}
-
-.economical {
-    background-image: url('images/economical.jpg');
-}
-
-.electric {
-    background-image: url('images/electric.jpg');
-}
-
-.hybrid {
-    background-image: url('images/hybrid.jpg');
-}
-
-.luxury {
-    background-image: url('images/luxury.jpg');
-}
-
-.convertibles {
-    background-image: url('images/convertibles.jpg');
-}
-
-.family {
-    background-image: url('images/family.jpg');
-}
-
-.sports {
-    background-image: url('images/sports.jpg');
-}
-
-.offroad {
-    background-image: url('images/offroad.jpg');
-}
-
-.compact {
-    background-image: url('images/compact.jpg');
-}
-
-.vans {
-    background-image: url('images/vans.jpg');
+    transform: scale(1.05); /* Slight zoom on hover */
+    filter: brightness(1.1); /* Brighten the image */
 }
 
 
