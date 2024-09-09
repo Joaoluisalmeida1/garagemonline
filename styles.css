@@ -1,7 +1,12 @@
-/* Import the Poppins font */
+/* ---------------------------------------------
+    Font Import
+--------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
+/* ---------------------------------------------
+    Global Styles
+--------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -15,15 +20,18 @@ body {
     padding: 0px;
 }
 
-/* Container with high margins */
-
+/* ---------------------------------------------
+    Container for Layout
+--------------------------------------------- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Section */
+/* ---------------------------------------------
+    Header Section
+--------------------------------------------- */
 
 header {
     background-color: #ffffff;
@@ -75,6 +83,7 @@ header nav ul li a:hover {
 }
 
 /* Login Button */
+
 .login-button {
     background-color: #f59e42; /* Accent color for login button */
     color: white;
@@ -89,7 +98,9 @@ header nav ul li a:hover {
     color: white
 }
 
-/* Main section */
+/* ---------------------------------------------
+    Search Section
+--------------------------------------------- */
 
 .search-section {
     background-color: #ffffff;
@@ -105,6 +116,8 @@ header nav ul li a:hover {
     color: #3b3b58;
 }
 
+/* Form Grid Layout */
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
@@ -118,7 +131,10 @@ header nav ul li a:hover {
     align-items: center;
 }
 
-/* Form Group */
+/* ---------------------------------------------
+    Form Group Styles
+--------------------------------------------- */
+
 .form-group {
     display: flex;
     flex-direction: column;
