@@ -297,3 +297,19 @@ for (const category in categories) {
     changeBackground(category, categories[category]);
 }
 
+function preloadImages(imageUrls) {
+    imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
+// Call this with the image URLs you want to preload
+preloadImages([
+    'images/classics.jpg',
+    'images/suvs.jpg',
+    'images/economical.jpg',
+    // Add all your images here...
+]);
+
+
