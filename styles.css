@@ -41,6 +41,15 @@ body {
     background-color: rgb(215, 228, 233);
 }
 
+a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the color of the parent container */
+}
+
+a:hover {
+    text-decoration: none; /* Ensure there's no underline on hover as well */
+}
+
 /* ---------------------------------------------
     Container for Layout
 --------------------------------------------- */
@@ -691,6 +700,10 @@ select {
     background: linear-gradient(120deg, var(--secondary-color-light), var(--background-color));
 }
 
+.forum-posts{
+    flex-grow: 1
+}
+
 /* Example for icon data on each box */
 .forum-box.geral::before { content: '📢'; }
 .forum-box.spotting::before { content: '🚗'; }
@@ -710,6 +723,152 @@ select {
     height: 150px;
 }
 
+/* Forum Posts Layout */
+.forum-posts {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.forum-content {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.post {
+    display: flex;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.voting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.voting button {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.voting .upvote {
+    color: var(--primary-color);
+}
+
+.voting .downvote {
+    color: var(--primary-color-dark);
+}
+
+.voting .votes {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.post-details {
+    flex: 1;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.post-title a:hover {
+    color: var(--primary-color);
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.post-body {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.comment-link {
+    margin-top: 15px;
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.comment-link:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-section ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.sidebar-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.sidebar-section p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .forum-posts {
+        flex-direction: column;
+    }
+
+    .forum-content {
+        margin-right: 0;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+}
 
 
 

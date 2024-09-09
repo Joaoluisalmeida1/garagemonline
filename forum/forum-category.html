@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Topic Page</title>
+    <link rel="stylesheet" href="/garagemonline/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="/garagemonline/index.html"><h1>Garagem Online<span class="dot">.</span></h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/garagemonline/forum.html">Fórum</a></li>
+                <li><a href="/garagemonline/sobre.html">Sobre</a></li>
+                <li><a href="/garagemonline/carros.html">Carros Vendidos</a></li>
+                <li><a href="#" class="login-button">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="forum-posts" >
+    <div class="container">
+        <div class="forum-content">
+            <!-- Post 1 -->
+            <div class="post">
+                <div class="voting">
+                    <button class="upvote">▲</button>
+                    <span class="votes">32</span>
+                    <button class="downvote">▼</button>
+                </div>
+                <div class="post-details">
+                    <h2 class="post-title"><a href="post-page.html">Título do Post</a></h2>
+                    <p class="post-meta">Publicado por <strong>Utilizador1</strong> há 2 horas</p>
+                    <p class="post-body">
+                        Aqui está uma breve descrição do post. Pode ser uma pergunta sobre mecânica, uma dúvida sobre modificação, etc.
+                    </p>
+                    <a href="post-page.html" class="comment-link">15 comentários</a>
+                </div>
+            </div>
+            <!-- Repeat for other posts -->
+        </div>
+
+        <!-- Optional Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Filtros</h3>
+                <ul>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Mais Recentes</a></li>
+                    <li><a href="#">Com Mais Comentários</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Regras do Fórum</h3>
+                <p>1. Seja respeitoso</p>
+                <p>2. Nada de spam</p>
+                <p>3. Contribua positivamente para a comunidade</p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                <img src="images/twitter.png" alt="Twitter">
+            </a>
+            <a href="mailto:youremail@example.com" class="social-icon">
+                <img src="images/email-icon.png" alt="Email">
+            </a>
+        </div>
+        <p>&copy; 2024 Garagem Online. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -313,3 +313,54 @@ preloadImages([
 ]);
 
 
+
+
+
+// FORUM
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'Geral';
+
+    // Update the page title and heading based on the category
+    document.getElementById('category-title').textContent = category;
+
+    // Mock posts data (can be fetched from a server or an API)
+    const postsData = {
+        'Geral': [
+            { title: 'Bem-vindo ao Fórum Geral', author: 'Admin', comments: 10 },
+            { title: 'Sugestões para melhorar o fórum', author: 'Utilizador1', comments: 5 }
+        ],
+        'Carros Antigos': [
+            { title: 'Qual o melhor clássico para investir?', author: 'Utilizador2', comments: 7 },
+            { title: 'Exposição de carros antigos em Lisboa', author: 'Utilizador3', comments: 12 }
+        ],
+        // Add more categories and posts here
+    };
+
+    // Get the container where posts will be added
+    const postsContainer = document.getElementById('posts-container');
+
+    // Load the posts for the selected category
+    const posts = postsData[category] || [];
+    posts.forEach(post => {
+        const postHTML = `
+            <div class="post">
+                <div class="voting">
+                    <button class="upvote">▲</button>
+                    <span class="votes">0</span>
+                    <button class="downvote">▼</button>
+                </div>
+                <div class="post-details">
+                    <h2 class="post-title"><a href="post-page.html">${post.title}</a></h2>
+                    <p class="post-meta">Publicado por <strong>${post.author}</strong></p>
+                    <a href="post-page.html" class="comment-link">${post.comments} comentários</a>
+                </div>
+            </div>
+        `;
+        postsContainer.innerHTML += postHTML;
+    });
+});
+
+
