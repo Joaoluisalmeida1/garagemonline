@@ -14,16 +14,16 @@ noUiSlider.create(kmsSlider, {
     step: 5000
 });
 kmsSlider.noUiSlider.on('update', function(values) {
-    document.getElementById('kms-output').textContent = `${parseInt(values[0])} - ${parseInt(values[1])}`;
+    document.getElementById('kms-output').textContent = `${parseInt(values[0])} km - ${parseInt(values[1])} km`;
 });
 
 // Year Range Slider (dual handle)
 const yearSlider = document.getElementById('year-range');
 noUiSlider.create(yearSlider, {
-    start: [2010, 2015],
+    start: [2000, 2020],
     connect: true,
     range: {
-        'min': 1980,
+        'min': 1950,
         'max': 2024
     },
     step: 1
@@ -35,128 +35,27 @@ yearSlider.noUiSlider.on('update', function(values) {
 // Price Range Slider (dual handle)
 const priceSlider = document.getElementById('price-range');
 noUiSlider.create(priceSlider, {
-    start: [10000, 50000],
+    start: [10000, 100000],
     connect: true,
     range: {
         'min': 0,
-        'max': 100000
+        'max': 1000000
     },
     step: 1000
 });
 priceSlider.noUiSlider.on('update', function(values) {
-    document.getElementById('price-output').textContent = `${parseInt(values[0])} - ${parseInt(values[1])}`;
+    document.getElementById('price-output').textContent = `${parseInt(values[0])}€ - ${parseInt(values[1])}€`;
 });
 
 // Placeholder JavaScript for future interactivity
 console.log('Car Marketplace Loaded');
 
-// Example car makes, models, and submodels data
-const carMakes = ["Mercedes-Benz", "BMW", "Audi", "Volkswagen", "Ford"];
-const carModels = {
-    "Mercedes-Benz": ["A-Class", "C-Class", "E-Class"],
-    "BMW": ["3 Series", "5 Series", "X5"],
-    "Audi": ["A4", "A6", "Q5"]
-};
-const carSubmodels = {
-    "A-Class": ["A180", "A200", "A250"],
-    "3 Series": ["320i", "330i", "340i"]
-};
 
-// Suggestion for car make (Marca)
-const makeInput = document.getElementById('make');
-const makeSuggestions = document.getElementById('make-suggestions');
 
-makeInput.addEventListener('input', function() {
-    const inputValue = makeInput.value.toLowerCase();
-    makeSuggestions.innerHTML = ''; // Clear previous suggestions
 
-    // Filter suggestions
-    const filteredMakes = carMakes.filter(make => make.toLowerCase().includes(inputValue));
 
-    if (filteredMakes.length === 0) {
-        makeSuggestions.classList.remove('show'); // Hide if no suggestions
-    } else {
-        makeSuggestions.classList.add('show'); // Show the list if there are suggestions
-        filteredMakes.forEach(make => {
-            const suggestionItem = document.createElement('li');
-            suggestionItem.textContent = make;
-            suggestionItem.classList.add('suggestion-item');
-            makeSuggestions.appendChild(suggestionItem);
 
-            suggestionItem.addEventListener('click', () => {
-                makeInput.value = make;
-                makeSuggestions.innerHTML = ''; // Clear suggestions after selection
-                makeSuggestions.classList.remove('show'); // Hide suggestions after selection
-            });
-        });
-    }
-});
 
-// Same approach for models and submodels
-const modelInput = document.getElementById('model');
-const modelSuggestions = document.getElementById('model-suggestions');
-
-makeInput.addEventListener('change', function() {
-    const selectedMake = makeInput.value;
-    const filteredModels = carModels[selectedMake] || [];
-
-    modelInput.addEventListener('input', function() {
-        const inputValue = modelInput.value.toLowerCase();
-        modelSuggestions.innerHTML = ''; // Clear previous suggestions
-
-        if (filteredModels.length === 0 || !inputValue) {
-            modelSuggestions.classList.remove('show'); // Hide if no suggestions
-        } else {
-            modelSuggestions.classList.add('show'); // Show suggestions
-            filteredModels.filter(model => model.toLowerCase().includes(inputValue))
-                .forEach(model => {
-                    const suggestionItem = document.createElement('li');
-                    suggestionItem.textContent = model;
-                    suggestionItem.classList.add('suggestion-item');
-                    modelSuggestions.appendChild(suggestionItem);
-
-                    suggestionItem.addEventListener('click', () => {
-                        modelInput.value = model;
-                        modelSuggestions.innerHTML = ''; // Clear after selection
-                        modelSuggestions.classList.remove('show'); // Hide list
-                    });
-                });
-        }
-    });
-});
-
-// Handle submodels similarly
-const submodelInput = document.getElementById('submodel');
-const submodelSuggestions = document.getElementById('submodel-suggestions');
-
-modelInput.addEventListener('change', function() {
-    const selectedModel = modelInput.value;
-    const filteredSubmodels = carSubmodels[selectedModel] || [];
-
-    submodelInput.addEventListener('input', function() {
-        const inputValue = submodelInput.value.toLowerCase();
-        submodelSuggestions.innerHTML = ''; // Clear previous suggestions
-
-        if (filteredSubmodels.length === 0 || !inputValue) {
-            submodelSuggestions.classList.remove('show'); // Hide if no suggestions
-        } else {
-            submodelSuggestions.classList.add('show'); // Show suggestions
-            filteredSubmodels.filter(submodel => submodel.toLowerCase().includes(inputValue))
-                .forEach(submodel => {
-                    const suggestionItem = document.createElement('li');
-                    suggestionItem.textContent = submodel;
-                    suggestionItem.classList.add('suggestion-item');
-                    submodelSuggestions.appendChild(suggestionItem);
-
-                    suggestionItem.addEventListener('click', () => {
-                        submodelInput.value = submodel;
-                        submodelSuggestions.innerHTML = ''; // Clear after selection
-                        submodelSuggestions.classList.remove('show'); // Hide list
-                    });
-                });
-        }
-    });
-});
 
 
 // Get modal element and open/close buttons
@@ -179,4 +78,180 @@ window.addEventListener('click', function(event) {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
+});
+
+
+
+// Example car makes, models, and submodels data
+const carMakes = [
+    "Mercedes-Benz", "BMW", "Audi", "Volkswagen", "Ford", "Toyota", "Honda", 
+    "Nissan", "Chevrolet", "Hyundai", "Kia", "Mazda", "Subaru", "Tesla", 
+    "Porsche", "Lexus", "Jaguar", "Land Rover", "Volvo", "Mitsubishi", 
+    "Peugeot", "Renault", "Ferrari", "Lamborghini", "Bentley", "Rolls-Royce", 
+    "Aston Martin", "McLaren", "Bugatti", "Maserati"
+];
+
+const carModels = {
+    "Mercedes-Benz": ["A-Class", "C-Class", "E-Class", "S-Class", "GLE", "GLC", "GLA", "G-Wagon", "AMG GT"],
+    "BMW": ["3 Series", "5 Series", "7 Series", "X3", "X5", "X7", "M3", "M5", "i8", "Z4"],
+    "Audi": ["A3", "A4", "A6", "A8", "Q3", "Q5", "Q7", "R8", "TT"],
+    "Volkswagen": ["Golf", "Passat", "Tiguan", "Touareg", "Jetta", "Polo", "Arteon", "ID.4"],
+    "Ford": ["Fiesta", "Focus", "Mustang", "F-150", "Explorer", "Escape", "Bronco", "Edge", "Fusion"],
+    "Toyota": ["Corolla", "Camry", "Prius", "Land Cruiser", "Highlander", "RAV4", "Tacoma", "Hilux", "Supra"],
+    "Honda": ["Civic", "Accord", "CR-V", "HR-V", "Pilot", "Fit", "Odyssey", "Ridgeline"],
+    "Nissan": ["Altima", "Maxima", "370Z", "GT-R", "Rogue", "Pathfinder", "Murano", "Sentra"],
+    "Chevrolet": ["Cruze", "Malibu", "Camaro", "Corvette", "Equinox", "Silverado", "Tahoe", "Suburban", "Blazer"],
+    "Hyundai": ["Elantra", "Sonata", "Tucson", "Santa Fe", "Palisade", "Veloster", "Kona", "Accent"],
+    "Kia": ["Soul", "Seltos", "Sportage", "Sorento", "Stinger", "Telluride", "Rio", "Optima"],
+    "Mazda": ["Mazda3", "Mazda6", "CX-3", "CX-5", "CX-9", "MX-5 Miata"],
+    "Subaru": ["Impreza", "Outback", "Forester", "Crosstrek", "WRX", "Ascent", "Legacy"],
+    "Tesla": ["Model S", "Model 3", "Model X", "Model Y", "Roadster"],
+    "Porsche": ["911", "Cayenne", "Macan", "Panamera", "Taycan", "718 Cayman"],
+    "Lexus": ["ES", "RX", "NX", "LS", "GX", "LC", "IS", "LX"],
+    "Jaguar": ["XE", "XF", "XJ", "F-Pace", "E-Pace", "F-Type", "I-Pace"],
+    "Land Rover": ["Range Rover", "Defender", "Discovery", "Evoque", "Velar", "Freelander"],
+    "Volvo": ["XC40", "XC60", "XC90", "S60", "S90", "V60", "V90"],
+    "Mitsubishi": ["Lancer", "Outlander", "Eclipse Cross", "Pajero", "ASX"],
+    "Peugeot": ["208", "308", "508", "3008", "5008", "2008"],
+    "Renault": ["Clio", "Megane", "Captur", "Kadjar", "Scenic", "Koleos", "Twingo"],
+    "Ferrari": ["488", "Roma", "SF90 Stradale", "Portofino", "F8 Tributo", "812 Superfast"],
+    "Lamborghini": ["Huracan", "Aventador", "Urus", "Gallardo", "Murcielago"],
+    "Bentley": ["Bentayga", "Continental GT", "Flying Spur", "Mulsanne"],
+    "Rolls-Royce": ["Phantom", "Ghost", "Wraith", "Dawn", "Cullinan"],
+    "Aston Martin": ["DB11", "Vantage", "DBS Superleggera", "Rapide", "Vanquish"],
+    "McLaren": ["720S", "570S", "600LT", "GT", "P1", "Senna", "Artura"],
+    "Bugatti": ["Chiron", "Veyron", "Divo"],
+    "Maserati": ["Ghibli", "Levante", "Quattroporte", "GranTurismo"]
+};
+
+const carSubmodels = {
+    "A-Class": ["A180", "A200", "A250", "AMG A35", "AMG A45"],
+    "C-Class": ["C180", "C200", "C300", "C43 AMG", "C63 AMG"],
+    "E-Class": ["E200", "E300", "E400", "E450", "E63 AMG"],
+    "3 Series": ["318i", "320i", "330i", "M340i", "330e", "M3"],
+    "5 Series": ["520i", "530i", "540i", "M550i", "M5"],
+    "X5": ["xDrive40i", "xDrive45e", "xDrive50i", "M50i", "M"],
+    "A4": ["A4 35 TFSI", "A4 40 TFSI", "A4 45 TFSI", "S4", "RS4"],
+    "A6": ["A6 40 TDI", "A6 45 TFSI", "A6 50 TDI", "S6", "RS6"],
+    "Golf": ["Golf TSI", "Golf GTI", "Golf R", "Golf GTE"],
+    "Passat": ["Passat TDI", "Passat Alltrack", "Passat GTE"],
+    "Mustang": ["EcoBoost", "GT", "Shelby GT500"],
+    "Civic": ["Civic LX", "Civic EX", "Civic Touring", "Civic Type R"],
+    "Accord": ["Accord LX", "Accord EX-L", "Accord Touring"],
+    "Camaro": ["LT", "SS", "ZL1"],
+    "Corolla": ["Corolla L", "Corolla LE", "Corolla XSE"],
+    "Model S": ["Long Range", "Plaid"],
+    "Model 3": ["Standard Range", "Long Range", "Performance"],
+    "911": ["Carrera", "Carrera S", "Turbo", "Turbo S"],
+    "Cayenne": ["Cayenne S", "Cayenne GTS", "Cayenne Turbo", "Cayenne E-Hybrid"],
+    "Macan": ["Macan S", "Macan GTS", "Macan Turbo"]
+};
+
+
+// aaa
+
+// For car make (Marca)
+const makeInput = document.getElementById('make');
+const makeSuggestions = document.getElementById('make-suggestions');
+
+// Model and Submodel inputs
+const modelInput = document.getElementById('model');
+const modelSuggestions = document.getElementById('model-suggestions');
+const submodelInput = document.getElementById('submodel');
+const submodelSuggestions = document.getElementById('submodel-suggestions');
+
+// Reset fields when Marca is changed
+makeInput.addEventListener('change', function() {
+    modelInput.value = ''; // Clear Model field
+    submodelInput.value = ''; // Clear Submodel field
+    modelSuggestions.innerHTML = ''; // Clear suggestions for Model
+    submodelSuggestions.innerHTML = ''; // Clear suggestions for Submodel
+
+    // Populate Model field based on Marca
+    const selectedMake = makeInput.value;
+    const models = carModels[selectedMake] || [];
+
+    // Enable Model input only if there are models available for the selected Marca
+    if (models.length > 0) {
+        modelInput.disabled = false;
+    } else {
+        modelInput.disabled = true;
+    }
+
+    // Disable Submodel input (since no Model is selected yet)
+    submodelInput.disabled = true;
+});
+
+// Function to show suggestions (for both Make, Model, and Submodel)
+function showSuggestions(filteredItems, suggestionElement, inputElement) {
+    suggestionElement.innerHTML = ''; // Clear previous suggestions
+
+    if (filteredItems.length > 0) {
+        suggestionElement.classList.add('show'); // Show suggestions list
+        filteredItems.forEach(item => {
+            const suggestionItem = document.createElement('li');
+            suggestionItem.textContent = item;
+            suggestionItem.classList.add('suggestion-item');
+            suggestionElement.appendChild(suggestionItem);
+
+            // Set the input value when a suggestion is clicked
+            suggestionItem.addEventListener('click', function() {
+                inputElement.value = item;
+                suggestionElement.innerHTML = ''; // Clear suggestions after selection
+                suggestionElement.classList.remove('show'); // Hide suggestions after selection
+
+                // If Marca is selected, enable the Model field
+                if (inputElement === makeInput) {
+                    modelInput.disabled = false;
+                    submodelInput.disabled = true; // Submodel stays disabled
+                }
+                
+                // If Model is selected, enable the Submodel field
+                if (inputElement === modelInput) {
+                    const selectedModel = modelInput.value;
+                    const submodels = carSubmodels[selectedModel] || [];
+
+                    if (submodels.length > 0) {
+                        submodelInput.disabled = false;
+                    } else {
+                        submodelInput.disabled = true;
+                    }
+                }
+            });
+        });
+    } else {
+        suggestionElement.classList.remove('show'); // Hide list if no suggestions
+    }
+}
+
+// For car make (Marca) suggestions
+makeInput.addEventListener('focus', function() {
+    showSuggestions(carMakes, makeSuggestions, makeInput);
+});
+makeInput.addEventListener('input', function() {
+    showSuggestions(carMakes.filter(make => make.toLowerCase().includes(makeInput.value.toLowerCase())), makeSuggestions, makeInput);
+});
+
+// For car model (Model) suggestions
+modelInput.addEventListener('focus', function() {
+    const selectedMake = makeInput.value;
+    const models = carModels[selectedMake] || [];
+    showSuggestions(models, modelSuggestions, modelInput);
+});
+modelInput.addEventListener('input', function() {
+    const selectedMake = makeInput.value;
+    const models = carModels[selectedMake] || [];
+    showSuggestions(models.filter(model => model.toLowerCase().includes(modelInput.value.toLowerCase())), modelSuggestions, modelInput);
+});
+
+// For car submodel (Submodel) suggestions
+submodelInput.addEventListener('focus', function() {
+    const selectedModel = modelInput.value;
+    const submodels = carSubmodels[selectedModel] || [];
+    showSuggestions(submodels, submodelSuggestions, submodelInput);
+});
+submodelInput.addEventListener('input', function() {
+    const selectedModel = modelInput.value;
+    const submodels = carSubmodels[selectedModel] || [];
+    showSuggestions(submodels.filter(submodel => submodel.toLowerCase().includes(submodelInput.value.toLowerCase())), submodelSuggestions, submodelInput);
 });

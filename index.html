@@ -40,30 +40,61 @@
                     <div class="form-group">
                         <label for="make">Marca</label>
                         <input type="text" id="make" name="make" placeholder="Marca">
+                        <button class="dropdown-button" id="make-dropdown">&#x25BC;</button>
                         <ul id="make-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Marca suggestions -->
                     </div>
                     
                     <div class="form-group">
                         <label for="model">Modelo</label>
-                        <input type="text" id="model" name="model" placeholder="Modelo">
+                        <input type="text" id="model" name="model" placeholder="Modelo" disabled>
+                        <button class="dropdown-button" id="model-dropdown" disabled>&#x25BC;</button>
                         <ul id="model-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Modelo suggestions -->
                     </div>
                     
                     <div class="form-group">
                         <label for="submodel">Submodelo</label>
-                        <input type="text" id="submodel" name="submodel" placeholder="Submodelo">
+                        <input type="text" id="submodel" name="submodel" placeholder="Submodelo" disabled>
+                        <button class="dropdown-button" id="submodel-dropdown" disabled>&#x25BC;</button>
                         <ul id="submodel-suggestions" class="suggestions-list"></ul> <!-- Unique ID for Submodelo suggestions -->
                     </div>
             
                     <div class="form-group">
                         <label for="color">Cor</label>
                         <select id="color" name="color">
+                            <option value="branco">Qualquer</option>
                             <option value="branco">Branco</option>
                             <option value="preto">Preto</option>
                             <option value="vermelho">Vermelho</option>
                             <option value="azul">Azul</option>
+                            <option value="cinzento">Cinzento</option>
+                            <option value="prata">Prata</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarelo">Amarelo</option>
+                            <option value="laranja">Laranja</option>
+                            <option value="castanho">Castanho</option>
+                            <option value="dourado">Dourado</option>
+                            <option value="bege">Bege</option>
+                            <option value="champanhe">Champanhe</option>
+                            <option value="roxo">Roxo</option>
+                            <option value="rosa">Rosa</option>
+                            <option value="creme">Creme</option>
+                            <option value="azul-escuro">Azul Escuro</option>
+                            <option value="vermelho-escuro">Vermelho Escuro</option>
+                            <option value="verde-escuro">Verde Escuro</option>
+                            <option value="preto-metálico">Preto Metálico</option>
+                            <option value="cinza-metálico">Cinzento Metálico</option>
+                            <option value="azul-metálico">Azul Metálico</option>
+                            <option value="vermelho-metálico">Vermelho Metálico</option>
+                            <option value="castanho-metálico">Castanho Metálico</option>
+                            <option value="verde-metálico">Verde Metálico</option>
+                            <option value="prata-metálico">Prata Metálico</option>
+                            <option value="dourado-metálico">Dourado Metálico</option>
+                            <option value="cinza-antracite">Cinzento Antracite</option>
+                            <option value="cinza-grafite">Cinzento Grafite</option>
+                            <option value="branco-pérola">Branco Pérola</option>
                         </select>
                     </div>
+                    
                 </div>
             
                 <!-- Sliders for Kilómetros, Ano, Preço -->
@@ -86,7 +117,7 @@
                     <div class="form-group">
                         <label for="price-range">Preço</label>
                         <div id="price-range"></div>
-                        <output id="price-output">10000 - 50000</output>
+                        <output id="price-output">10000€ - 50000€</output>
                     </div>
                 </div>
                 
@@ -101,63 +132,181 @@
                         <div class="modal-content">
                             <span class="close-button">&times;</span>
                             <h3>Filtros Avançados</h3>
-                            <form class="advanced-filters-form">
-                                <div class="form-group">
-                                    <label for="gearbox">Caixa de Velocidades</label>
-                                    <select id="gearbox">
-                                        <option value="manual">Manual</option>
-                                        <option value="automatic">Automático</option>
-                                        <option value="semi-automatic">Semi-Automático</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label for="first-owner">Primeiro Dono</label>
-                                    <select id="first-owner">
-                                        <option value="yes">Sim</option>
-                                        <option value="no">Não</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label for="fuel-type">Tipo de Combustível</label>
-                                    <select id="fuel-type">
-                                        <option value="petrol">Gasolina</option>
-                                        <option value="diesel">Diesel</option>
-                                        <option value="electric">Elétrico</option>
-                                        <option value="hybrid">Híbrido</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label for="accidents">Acidentes</label>
-                                    <select id="accidents">
-                                        <option value="none">Sem Acidentes</option>
-                                        <option value="with">Acidentado</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label for="body-type">Tipo de Carroçaria</label>
-                                    <select id="body-type">
-                                        <option value="sedan">Sedan</option>
-                                        <option value="coupe">Coupé</option>
-                                        <option value="hatchback">Hatchback</option>
-                                        <option value="convertible">Convertível</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label for="door-count">Número de Portas</label>
-                                    <select id="door-count">
-                                        <option value="2">2</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                    
-                                <button type="submit" class="search-button">Aplicar Filtros</button>
-                            </form>
+                            <div class="advanced-filters-container">
+                                <form class="advanced-filters-form">
+                                    <!-- Gearbox Type -->
+                                    <div class="form-group">
+                                        <label for="gearbox">Caixa de Velocidades</label>
+                                        <select id="gearbox">
+                                            <option value="manual">Manual</option>
+                                            <option value="automatic">Automático</option>
+                                            <option value="semi-automatic">Semi-Automático</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- First Owner -->
+                                    <div class="form-group">
+                                        <label for="first-owner">Primeiro Dono</label>
+                                        <select id="first-owner">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Fuel Type -->
+                                    <div class="form-group">
+                                        <label for="fuel-type">Tipo de Combustível</label>
+                                        <select id="fuel-type">
+                                            <option value="petrol">Gasolina</option>
+                                            <option value="diesel">Diesel</option>
+                                            <option value="electric">Elétrico</option>
+                                            <option value="hybrid">Híbrido</option>
+                                            <option value="gas">GPL (Gás)</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Body Type -->
+                                    <div class="form-group">
+                                        <label for="body-type">Tipo de Carroçaria</label>
+                                        <select id="body-type">
+                                            <option value="sedan">Sedan</option>
+                                            <option value="coupe">Coupé</option>
+                                            <option value="hatchback">Hatchback</option>
+                                            <option value="convertible">Convertível</option>
+                                            <option value="suv">SUV</option>
+                                            <option value="wagon">Carrinha</option>
+                                            <option value="pickup">Pickup</option>
+                                            <option value="van">Van</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Number of Doors -->
+                                    <div class="form-group">
+                                        <label for="door-count">Número de Portas</label>
+                                        <select id="door-count">
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Interior Color -->
+                                    <div class="form-group">
+                                        <label for="interior-color">Cor Interior</label>
+                                        <select id="interior-color">
+                                            <option value="preto">Preto</option>
+                                            <option value="cinzento">Cinzento</option>
+                                            <option value="branco">Branco</option>
+                                            <option value="bege">Bege</option>
+                                            <option value="castanho">Castanho</option>
+                                            <option value="vermelho">Vermelho</option>
+                                            <option value="azul">Azul</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Upholstery -->
+                                    <div class="form-group">
+                                        <label for="upholstery">Estofos</label>
+                                        <select id="upholstery">
+                                            <option value="fabric">Tecido</option>
+                                            <option value="leather">Couro</option>
+                                            <option value="alcantara">Alcantara</option>
+                                            <option value="synthetic">Couro Sintético</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Drivetrain -->
+                                    <div class="form-group">
+                                        <label for="drivetrain">Tipo de Tração</label>
+                                        <select id="drivetrain">
+                                            <option value="fwd">Tração Dianteira (FWD)</option>
+                                            <option value="rwd">Tração Traseira (RWD)</option>
+                                            <option value="awd">Tração às 4 Rodas (AWD)</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Climate Control -->
+                                    <div class="form-group">
+                                        <label for="climate-control">Ar Condicionado</label>
+                                        <select id="climate-control">
+                                            <option value="manual">Manual</option>
+                                            <option value="automatic">Automático</option>
+                                            <option value="none">Sem Ar Condicionado</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Sunroof -->
+                                    <div class="form-group">
+                                        <label for="sunroof">Teto de Abrir</label>
+                                        <select id="sunroof">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Parking Sensors -->
+                                    <div class="form-group">
+                                        <label for="parking-sensors">Sensores de Estacionamento</label>
+                                        <select id="parking-sensors">
+                                            <option value="front-rear">Frente e Traseira</option>
+                                            <option value="rear">Apenas Traseira</option>
+                                            <option value="none">Sem Sensores</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Navigation System -->
+                                    <div class="form-group">
+                                        <label for="navigation-system">Sistema de Navegação</label>
+                                        <select id="navigation-system">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Cruise Control -->
+                                    <div class="form-group">
+                                        <label for="cruise-control">Controlador de Velocidade (Cruise Control)</label>
+                                        <select id="cruise-control">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Xenon/LED Lights -->
+                                    <div class="form-group">
+                                        <label for="lights">Faróis</label>
+                                        <select id="lights">
+                                            <option value="xenon">Xenon</option>
+                                            <option value="led">LED</option>
+                                            <option value="halogen">Halogéneo</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Reverse Camera -->
+                                    <div class="form-group">
+                                        <label for="reverse-camera">Câmara de Marcha Atrás</label>
+                                        <select id="reverse-camera">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Towing Hook -->
+                                    <div class="form-group">
+                                        <label for="towing-hook">Gancho de Reboque</label>
+                                        <select id="towing-hook">
+                                            <option value="yes">Sim</option>
+                                            <option value="no">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group submit-button-group">
+                                        <button type="submit" class="submit-advanced-filters">Aplicar Filtros</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            
                         </div>
                     </div>
                     <div class="right-side">

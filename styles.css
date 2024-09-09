@@ -195,7 +195,8 @@ output {
     border-color: #f59e42;
 }
 
-/* Range bars */
+/* Range bars container */
+
 .range-container {
     display: flex;
     justify-content: space-between;
@@ -212,7 +213,10 @@ output {
     font-size: 1rem;
 }
 
-/* Button Row Layout */
+/* ---------------------------------------------
+    Buttons Layout
+--------------------------------------------- */
+
 .button-row {
     display: flex;
     justify-content: space-between;
@@ -230,6 +234,7 @@ output {
 }
 
 /* Advanced Filters Button */
+
 .advanced-filters {
     background-color: transparent;
     border: none;
@@ -245,6 +250,7 @@ output {
 }
 
 /* Auction Button */
+
 .auction-button {
     background-color: #2d68a3; /* A pleasant blue for the auction button */
     color: white;
@@ -262,6 +268,7 @@ output {
 }
 
 /* Search Button */
+
 .search-button {
     background-color: #f59e42;
     color: white;
@@ -287,7 +294,10 @@ output {
 }
 
 
-/* Category Boxes */
+/* ---------------------------------------------
+    Category Section
+--------------------------------------------- */
+
 .category-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -367,7 +377,12 @@ output {
 .vans {
     background-image: url('images/vans.jpg');
 }
-/* Footer Section */
+
+
+/* ---------------------------------------------
+    Footer Section
+--------------------------------------------- */
+
 footer {
     background-color: #333;
     color: white;
@@ -401,7 +416,9 @@ footer .social-icon img {
     transition: transform 0.3s ease;
 }
 
-/* Suggestions bar */
+/* ---------------------------------------------
+    Suggestions Bar
+--------------------------------------------- */
 
 #suggestions-list {
     list-style: none;
@@ -413,6 +430,8 @@ footer .social-icon img {
     position: absolute;
     width: 100%;
     z-index: 1000;
+    padding: 0;
+    display: none;
 }
 
 .suggestion-item {
@@ -427,7 +446,7 @@ footer .social-icon img {
 
 .suggestions-list.show {
     display: block;
-    animation: fadeIn 0.3s ease;
+    /* animation: fadeIn 0.3s ease; */
 }
 
 @keyframes fadeIn {
@@ -457,39 +476,91 @@ footer .social-icon img {
 }
 
 /* Suggestions List Styling */
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px; /* Add space for the dropdown button */
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding-right: 30px; /* Room for the custom dropdown button */
+    position: relative;
+    z-index: 1; /* Ensure input sits above the dropdown button */
+}
+
+.dropdown-button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    border-radius: 3px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure button is on top of input */
+    display: none;
+}
+
+.dropdown-button::after {
+    font-size: 14px;
+}
+
+/* Suggestions list styling */
 .suggestions-list {
-    list-style: none; /* Remove default list bullets */
-    background-color: #fff; /* White background for suggestions */
-    border: 1px solid #ccc; /* Border for the suggestions list */
-    max-height: 150px; /* Limit the height and allow scrolling */
-    overflow-y: auto; /* Scrollable if the list is too long */
-    position: absolute; /* Position below the input */
-    width: 100%; /* Make it the same width as the input field */
-    z-index: 1000; /* Ensure it appears above other content */
-    padding: 0; /* Remove default padding */
-    margin: 5px 0 0 0;
-    display: none; /* Initially hide the list when empty */
-    box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
-
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 300px; /* Reduce max height */
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
+    margin-top: 5px;
+    display: none; /* Hidden initially */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.suggestions-list li {
-    padding: 10px; /* Padding for clickable area */
-    cursor: pointer; /* Make the suggestions clickable */
-    border-bottom: 1px solid #f4f4f9; /* Light border between suggestions */
-}
-
-.suggestions-list li:hover {
-    background-color: #f59e42; /* Highlight suggestion on hover */
-    color: white; /* Change text color on hover */
-}
-
-/* When suggestions are present, display the list */
 .suggestions-list.show {
-    display: block; /* Show the suggestions list */
+    display: block; /* Show when active */
 }
 
-/* Modal background */
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f59e42;
+    color: white;
+}
+
+
+
+/* ---------------------------------------------
+    Modal Styles
+--------------------------------------------- */
+
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; 
@@ -543,6 +614,57 @@ footer .social-icon img {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/* Style for the advanced filters container */
+.advanced-filters-container {
+    max-height: 300px; /* Adjust height to limit the size */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Optional: Customize the scrollbar */
+.advanced-filters-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.advanced-filters-container::-webkit-scrollbar-thumb {
+    background-color: #f59e42;
+    border-radius: 5px;
+}
+
+.advanced-filters-container::-webkit-scrollbar-track {
+    background-color: #f4f4f9;
+}
+
+/* Style for the submit button */
+.submit-advanced-filters {
+    background-color: #f59e42; /* Accent color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.submit-advanced-filters:hover {
+    background-color: #d48438; /* Darker orange on hover */
+}
+
+/* Align the button at the bottom */
+.submit-button-group {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-top: 20px;
+}
+
 
 /* . */
 /* For car Listings */
