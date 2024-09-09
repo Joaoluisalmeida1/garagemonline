@@ -1,0 +1,33 @@
+ORIGINAL
+
+:root {
+    --primary-color: #f59e42;  /* Accent orange */
+    --primary-color-dark: #d48438;  /* Darker orange */
+    --secondary-color: #3b3b58;  /* Dark gray-blue */
+    --background-color: #f4f4f9;  /* Soft background */
+    --text-color: #4a4a4a;  /* Soft dark gray text */
+    --border-color: #ccc;  /* Light border color */
+    --button-bg-color: #2d68a3;  /* Button background blue */
+    --button-bg-hover-color: #1e88e5;  /* Button hover background blue */
+    --footer-bg-color: #333;  /* Dark footer background */
+    --white-color: #ffffff;  /* White */
+    --lighter-text-color: #888;
+    --light-text-color: #666;
+}
+
+TEST1
+
+:root {
+    --primary-color: #4A90E2; /* Soft blue */
+    --primary-color-dark: #357ABD; /* Darker blue */
+    --secondary-color: #34495E; /* Muted dark gray-blue */
+    --background-color: #ECF0F1; /* Light gray background */
+    --text-color: #2C3E50; /* Dark muted text */
+    --border-color: #BDC3C7; /* Light gray for borders */
+    --button-bg-color: #2ECC71; /* Green for buttons */
+    --button-bg-hover-color: #27AE60; /* Darker green on hover */
+    --footer-bg-color: #2C3E50; /* Dark footer background */
+    --white-color: #FFFFFF; /* White */
+    --light-text-color: #666; /* Lighter gray text */
+    --lighter-text-color: #888; /* Even lighter gray text */
+}

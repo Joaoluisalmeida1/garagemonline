@@ -7,20 +7,16 @@
     Color Palette
 --------------------------------------------- */
 :root {
-    --primary-color: #f59e42;  /* Accent orange */
-    --primary-color-dark: #d48438;  /* Darker orange */
-    --secondary-color: #3b3b58;  /* Dark gray-blue */
-    --background-color: #f4f4f9;  /* Soft background */
-    --text-color: #4a4a4a;  /* Soft dark gray text */
-    --border-color: #ccc;  /* Light border color */
-    --button-bg-color: #2d68a3;  /* Button background blue */
-    --button-bg-hover-color: #1e88e5;  /* Button hover background blue */
-    --footer-bg-color: #333;  /* Dark footer background */
-    --white-color: #ffffff;  /* White */
-    --lighter-text-color: #888;
-    --light-text-color: #666;
+    --primary-color: #e63946; /* Bold red */
+    --secondary-color: #2c2c2c; /* Charcoal gray */
+    --neutral-color: #f5f5f5; /* Light gray background */
+    --text-color: #2c2c2c; /* Charcoal text */
+    --border-color: #e0e0e0; /* Light gray border */
+    --button-bg-color: #e63946; /* Red button */
+    --button-bg-hover-color: #2c2c2c; /* Charcoal hover */
+    --footer-bg-color: #2c2c2c; /* Charcoal footer */
+    --white-color: #ffffff; /* White */
 }
-
 
 /* ---------------------------------------------
     Global Styles
@@ -113,8 +109,8 @@ header nav ul li a:hover {
 }
 
 .login-button:hover {
-    background-color: var(--primary-color-dark);
-    color: white
+    background-color: var(--button-bg-hover-color);
+    color: var(--white-color)
 }
 
 /* ---------------------------------------------
@@ -270,7 +266,7 @@ output {
 
 .auction-button {
     background-color: var(--button-bg-color);
-    color: white;
+    color: var(--white-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -281,7 +277,7 @@ output {
 }
 
 .auction-button:hover {
-    background-color: var(--button-bg-color);
+    background-color: var(--button-bg-hover-color);
 }
 
 /* Search Button */
@@ -299,7 +295,7 @@ output {
 }
 
 .search-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--button-bg-hover-color);
 }
 
 
@@ -326,7 +322,7 @@ output {
     position: relative;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: var(--white-color);
     border-radius: 10px;
     text-align: left; /* Align text to the left */
     padding: 20px;
@@ -419,18 +415,12 @@ footer .social-icon img {
     width: 30px;
     height: 30px;
     transition: transform 0.3s ease;
+    background-color: transparent; /* Ensure no background */
+    fill: var(--footer-bg-color);
 }
 
 footer .social-icon img:hover {
     transform: scale(1.2); /* Zoom effect on hover */
-}
-
-footer .social-icon img {
-    background-color: transparent; /* Ensure no background */
-    fill: #333; /* Make the SVG icon color match the footer */
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
 }
 
 /* ---------------------------------------------
@@ -439,8 +429,8 @@ footer .social-icon img {
 
 #suggestions-list {
     list-style: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
     margin-top: 5px;
     max-height: 150px;
     overflow-y: auto;
@@ -457,8 +447,8 @@ footer .social-icon img {
 }
 
 .suggestion-item:hover {
-    background-color: #f59e42;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .suggestions-list.show {
@@ -474,19 +464,19 @@ footer .social-icon img {
 
 /* noUiSlider Custom Color */
 .noUi-connect {
-    background: #f59e42 !important; /* Orange color for the slider's filled part */
+    background: var(--primary-color) !important; /* Use primary color */
 }
 
 /* Override noUiSlider handle styles */
 .noUi-handle {
-    border: 2px solid #f59e42 !important; /* Orange border for handles */
-    background-color: white; /* White interior for handles */
+    border: 2px solid var(--primary-color) !important; /* Use primary color for border */
+    background-color: var(--white-color); /* Use white for the interior */
 }
 
 /* Ensure the output is displayed below the slider */
 .range-container output {
     font-weight: bold;
-    color: #f59e42;
+    color: var(--primary-color); /* Use primary color */
     text-align: center;
     display: block; /* Make it take up the full width below */
     margin-top: 10px;
@@ -543,8 +533,8 @@ select {
 /* Suggestions list styling */
 .suggestions-list {
     list-style: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
     max-height: 300px; /* Reduce max height */
     overflow-y: auto;
     position: absolute;
@@ -567,8 +557,8 @@ select {
 }
 
 .suggestion-item:hover {
-    background-color: #f59e42;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 
@@ -659,7 +649,7 @@ select {
 /* Style for the submit button */
 .submit-advanced-filters {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
