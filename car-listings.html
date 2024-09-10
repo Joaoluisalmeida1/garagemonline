@@ -318,7 +318,7 @@
             </section>
         </div>
         <div class="container">
-            <h2>Carros à Venda</h2>
+            <h2 class="carros-venda">Carros à Venda</h2>
             <div class="form-group">
                 <label for="sort-by">Ordenar por:</label>
                 <div class="label-car-listing">
@@ -336,16 +336,19 @@
             <div class="car-listing-grid">
                 <!-- Repeat car listing cards here -->
                 <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <a href="car-ad.html"><img src="images/aclasse.jpg" alt="Car Image"></a>
                     <div class="car-info">
                         <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
                         <p>Ano: 2020</p>
                         <p>Transmissão: Automático</p>
                         <p>Kilómetros: 30,000 km</p>
                         <p>Localização: Lisboa</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <a href="car-ad.html"><p class="car-price">Preço: €25,000</p></a>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
@@ -354,27 +357,33 @@
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="car-info">
                         <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <p>Ano: 2023</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
+                        <p>Kilómetros: 12,000 km</p>
                         <p>Localização: Porto</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €55,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
                 <div class="car-card">
-                    <img src="images/series3.jpg" alt="Car Image">
+                    <img src="images/convertibles2.jpg" alt="Car Image">
                     <div class="car-info">
-                        <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <h3>Fiat 124 Spider</h3>
+                        <p>Ano: 2018</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
+                        <p>Kilómetros: 32,000 km</p>
                         <p>Localização: Ovar</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €28,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
@@ -382,13 +391,33 @@
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="car-info">
                         <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <p>Ano: 2023</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Sintra</p>
+                        <p>Kilómetros: 12,000 km</p>
+                        <p>Localização: Porto</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €55,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/convertibles2.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Fiat 124 Spider</h3>
+                        <p>Ano: 2018</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 32,000 km</p>
+                        <p>Localização: Ovar</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €28,000</p>
+
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
@@ -396,13 +425,33 @@
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="car-info">
                         <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <p>Ano: 2023</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
+                        <p>Kilómetros: 12,000 km</p>
+                        <p>Localização: Porto</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €55,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/convertibles2.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Fiat 124 Spider</h3>
+                        <p>Ano: 2018</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 32,000 km</p>
+                        <p>Localização: Ovar</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €28,000</p>
+
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
@@ -410,13 +459,33 @@
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="car-info">
                         <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <p>Ano: 2023</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
+                        <p>Kilómetros: 12,000 km</p>
+                        <p>Localização: Porto</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €55,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/convertibles2.jpg" alt="Car Image">
+                    <div class="car-info">
+                        <h3>Fiat 124 Spider</h3>
+                        <p>Ano: 2018</p>
+                        <p>Transmissão: Automático</p>
+                        <p>Kilómetros: 32,000 km</p>
+                        <p>Localização: Ovar</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €28,000</p>
+
+                        <button class="favorite-button">
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
@@ -424,114 +493,37 @@
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="car-info">
                         <h3>BMW Series 3</h3>
-                        <p>Preço: €55,000</p>
-                        <p>Ano: 2024</p>
+                        <p>Ano: 2023</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
+                        <p>Kilómetros: 12,000 km</p>
+                        <p>Localização: Porto</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €55,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
                 <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
+                    <img src="images/convertibles2.jpg" alt="Car Image">
                     <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
+                        <h3>Fiat 124 Spider</h3>
+                        <p>Ano: 2018</p>
                         <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
+                        <p>Kilómetros: 32,000 km</p>
+                        <p>Localização: Ovar</p>
+                        
+                        <!-- Move the price to the bottom and give it a distinct style -->
+                        <p class="car-price">Preço: €28,000</p>
+
                         <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
+                            <span class="heart-icon">&#x2665;</span>
                         </button>
                     </div>
                 </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="images/aclasse.jpg" alt="Car Image">
-                    <div class="car-info">
-                        <h3>Mercedes-Benz A-Class</h3>
-                        <p>Preço: €25,000</p>
-                        <p>Ano: 2020</p>
-                        <p>Transmissão: Automático</p>
-                        <p>Kilómetros: 30,000 km</p>
-                        <p>Localização: Lisboa</p>
-                        <button class="favorite-button">
-                            <span class="heart-icon">&#x2661;</span> <!-- Unicode heart -->
-                        </button>
-                    </div>
-                </div>
+                
 
             </div>
     

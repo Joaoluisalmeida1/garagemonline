@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Ad - Mercedes-Benz A-Class</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>Garagem Online<span class="dot">.</span></h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html">Fórum</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Carros Vendidos</a></li>
+                    <li><a href="#" class="login-button">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="container car-ad-container">
+            <!-- Car Image & Information -->
+            <div class="car-details-grid">
+                <!-- Left Column: Car Images -->
+                <div class="car-images">
+                    <img src="images/aclasse.jpg" alt="Car Image" id="main-image">
+                    <!-- Optional: Additional Images Slider -->
+                    <div class="additional-images">
+                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage(this)">
+                        <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage(this)">
+                        <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- Right Column: Car Information -->
+                <div class="car-info-details centered-text">
+                    <h2>Mercedes-Benz A-Class</h2>
+                    <p class="car-price">€25,000</p>
+                    <p><strong>Ano:</strong> 2020</p>
+                    <p><strong>Transmissão:</strong> Automático</p>
+                    <p><strong>Kilómetros:</strong> 30,000 km</p>
+                    <p><strong>Combustível:</strong> Diesel</p>
+                    <p><strong>Localização:</strong> Lisboa</p>
+                    <p><strong>Cor:</strong> Cinzento Metálico</p>
+                    
+                    <!-- Add Favorite Button -->
+                    <button class="favorite-button">❤️ Adicionar aos Favoritos</button>
+
+                    <!-- Seller Info Box -->
+                    <div class="seller-info centered-text">
+                        <h3>Vendedor: João Almeida</h3>
+                        <button class="contact-button">Contactar Vendedor</button>
+                        <button class="save-button">Guardar Anúncio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle Information Section -->
+            <div class="vehicle-info">
+                <h3>Detalhes do Veículo</h3>
+                <ul>
+                    <li><strong>Ano:</strong> 2020</li>
+                    <li><strong>Transmissão:</strong> Automático</li>
+                    <li><strong>Kilometragem:</strong> 30,000 km</li>
+                    <li><strong>Combustível:</strong> Diesel</li>
+                    <li><strong>Cor:</strong> Cinzento Metálico</li>
+                    <li><strong>Potência:</strong> 150cv</li>
+                </ul>
+            </div>
+
+            <!-- Admin's Take Section -->
+            <div class="admin-take">
+                <h3>Opinião do Administrador</h3>
+                <p>Este Mercedes-Benz A-Class é uma excelente opção para quem procura um carro compacto de luxo, com uma ótima combinação de performance e eficiência de combustível. O modelo de 2020 oferece tecnologia de ponta e conforto interior.</p>
+            </div>
+
+            <!-- Comment Section -->
+            <div class="comment-section">
+                <h3>Comentários</h3>
+                <div class="comment">
+                    <strong>Pedro:</strong> Este carro está disponível para test-drive?
+                </div>
+                <div class="comment">
+                    <strong>Maria:</strong> Está interessado em uma troca por um BMW?
+                </div>
+            </div>
+
+            <!-- Related Cars Section -->
+            <div class="related-cars">
+                <h3>Carros Relacionados</h3>
+                <div class="related-cars-grid">
+                    <div class="car-card">
+                        <img src="images/car2-small.jpg" alt="Car Image">
+                        <div class="car-info">
+                            <h3>BMW Série 3</h3>
+                            <p>€55,000</p>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/car3-small.jpg" alt="Car Image">
+                        <div class="car-info">
+                            <h3>Audi A4</h3>
+                            <p>€35,000</p>
+                        </div>
+                    </div>
+                    <!-- Add more related cars -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="mailto:youremail@example.com" class="social-icon">
+                    <img src="images/email-icon.png" alt="Email">
+                </a>
+            </div>
+            <p>&copy; 2024 Garagem Virtual. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
