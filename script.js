@@ -1,6 +1,55 @@
 // Placeholder JavaScript for future interactivity
 console.log('Car Marketplace Loaded');
+// Timer function for auctions
+function startAuctionTimers() {
+    const timers = document.querySelectorAll('.auction-timer');
+    
+    // Check if any timers were found on the page
+    if (timers.length === 0) {
+        console.log("No auction timers found!");
+        return;
+    }
 
+    timers.forEach((timer, index) => {
+        let timeLeft = parseInt(timer.getAttribute('data-time'), 10);
+
+        if (isNaN(timeLeft)) {
+            console.log(`Timer ${index} has an invalid data-time value.`);
+            return;
+        }
+
+        console.log(`Starting timer ${index} with ${timeLeft} seconds left.`);
+
+        function updateTimer() {
+            if (timeLeft > 0) {
+                timeLeft--;
+
+                // Calculate hours, minutes, and seconds
+                let hours = Math.floor(timeLeft / 3600);
+                let minutes = Math.floor((timeLeft % 3600) / 60);
+                let seconds = timeLeft % 60;
+
+                // Update the timer text content
+                timer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            } else {
+                timer.textContent = "Expired"; // If time runs out, show "Expired"
+                clearInterval(interval); // Stop the timer once it reaches zero
+            }
+        }
+
+        // Update the timer immediately to avoid a 1-second delay
+        updateTimer();
+
+        // Set the interval to update the timer every second
+        let interval = setInterval(updateTimer, 1000);
+    });
+}
+
+// Start the timers when the page loads
+window.onload = function() {
+    console.log("Page loaded. Initializing auction timers...");
+    startAuctionTimers();
+};
 
 // Kilometers Range Slider (dual handle)
 const kmsSlider = document.getElementById('kms-range');
@@ -379,6 +428,8 @@ document.querySelectorAll('.favorite-button').forEach(button => {
 function changeImage(src) {
     document.getElementById('main-image').src = src;
 }
+
+
 
 
 
