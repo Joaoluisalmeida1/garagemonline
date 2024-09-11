@@ -376,9 +376,10 @@ document.querySelectorAll('.favorite-button').forEach(button => {
 // Image slider for car ad pages
 
 
-function changeImage(element) {
-    const mainImage = document.getElementById('main-image');
-    mainImage.src = element.src; // Update the main image with the clicked thumbnail
+function changeImage(src) {
+    document.getElementById('main-image').src = src;
 }
+
+
 
 

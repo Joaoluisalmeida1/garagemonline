@@ -32,37 +32,46 @@
             <div class="car-details-grid">
                 <!-- Left Column: Car Images -->
                 <div class="car-images">
-                    <img src="images/aclasse.jpg" alt="Car Image" id="main-image">
-                    <!-- Optional: Additional Images Slider -->
+                    <div class="main-image-container">                    
+                        <img src="images/aclasse.jpg" alt="Car Image" id="main-image">
+                    </div>
+                    <!-- Thumbnails for selecting images -->
                     <div class="additional-images">
-                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage(this)">
-                        <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage(this)">
-                        <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage(this)">
+                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse.jpg')">
+                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse1.jpg')">
+                        <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage('images/aclasse2.jpg')">
+                        <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage('images/aclasse3.jpg')">
+                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse1.jpg')">
+                        <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage('images/aclasse2.jpg')">
+                        <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage('images/aclasse3.jpg')">
+                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse1.jpg')">
+                        <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage('images/aclasse2.jpg')">
+                        <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage('images/aclasse3.jpg')">
                     </div>
                 </div>
-
+    
                 <!-- Right Column: Car Information -->
-                <div class="car-info-details centered-text">
-                    <h2>Mercedes-Benz A-Class</h2>
-                    <p class="car-price">€25,000</p>
-                    <p><strong>Ano:</strong> 2020</p>
-                    <p><strong>Transmissão:</strong> Automático</p>
-                    <p><strong>Kilómetros:</strong> 30,000 km</p>
-                    <p><strong>Combustível:</strong> Diesel</p>
-                    <p><strong>Localização:</strong> Lisboa</p>
-                    <p><strong>Cor:</strong> Cinzento Metálico</p>
-                    
-                    <!-- Add Favorite Button -->
-                    <button class="favorite-button">❤️ Adicionar aos Favoritos</button>
-
+                <div class="car-info-details centered-text" >
+                    <div class="car-info-box">
+                        <h2>Mercedes-Benz A-Class</h2>
+                        <p class="car-price">€25,000</p>
+                        <p><strong>Ano:</strong> 2020</p>
+                        <p><strong>Transmissão:</strong> Automático</p>
+                        <p><strong>Kilómetros:</strong> 30,000 km</p>
+                        <p><strong>Combustível:</strong> Diesel</p>
+                        <p><strong>Localização:</strong> Lisboa</p>
+                        <p><strong>Cor:</strong> Cinzento Metálico</p>
+                    </div>
+    
                     <!-- Seller Info Box -->
                     <div class="seller-info centered-text">
-                        <h3>Vendedor: João Almeida</h3>
+                        <h3>Vendedor: Mercentro</h3>
                         <button class="contact-button">Contactar Vendedor</button>
                         <button class="save-button">Guardar Anúncio</button>
                     </div>
                 </div>
             </div>
+        </div>
 
             <!-- Vehicle Information Section -->
             <div class="vehicle-info">
