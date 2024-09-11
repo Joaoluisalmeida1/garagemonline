@@ -37,7 +37,7 @@
                     </div>
                     <!-- Thumbnails for selecting images -->
                     <div class="additional-images">
-                        <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse.jpg')">
+                        <img src="images/aclasse.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse.jpg')">
                         <img src="images/aclasse1.jpg" alt="Car Thumbnail 1" onclick="changeImage('images/aclasse1.jpg')">
                         <img src="images/aclasse2.jpg" alt="Car Thumbnail 2" onclick="changeImage('images/aclasse2.jpg')">
                         <img src="images/aclasse3.jpg" alt="Car Thumbnail 3" onclick="changeImage('images/aclasse3.jpg')">
@@ -71,57 +71,114 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
             <!-- Vehicle Information Section -->
             <div class="vehicle-info">
                 <h3>Detalhes do Veículo</h3>
                 <ul>
-                    <li><strong>Ano:</strong> 2020</li>
-                    <li><strong>Transmissão:</strong> Automático</li>
-                    <li><strong>Kilometragem:</strong> 30,000 km</li>
-                    <li><strong>Combustível:</strong> Diesel</li>
-                    <li><strong>Cor:</strong> Cinzento Metálico</li>
-                    <li><strong>Potência:</strong> 150cv</li>
+                    <li><img src="images/icons/calendar.png" alt="Ano"> <strong>Ano: </strong> 2020</li>
+                    <li><img src="images/icons/transmission-icon.png" alt="Transmissão"> <strong>Transmissão:</strong> Automático</li>
+                    <li><img src="images/icons/odometer-icon.png" alt="Kilometragem"> <strong>Kilometragem:</strong> 30,000 km</li>
+                    <li><img src="images/icons/fuel-icon.png" alt="Combustível"> <strong>Combustível:</strong> Diesel</li>
+                    <li><img src="images/icons/color-icon.png" alt="Cor"> <strong>Cor:</strong> Cinzento Metálico</li>
+                    <li><img src="images/icons/horsepower-icon.png" alt="Potência"> <strong>Potência:</strong> 150cv</li>
+                    <li><img src="images/icons/engine-icon.png" alt="Motor"> <strong>Motor:</strong> 2.0L</li>
+                    <li><img src="images/icons/door-icon.png" alt="Portas"> <strong>Portas:</strong> 5</li>
+                    <li><img src="images/icons/seats-icon.png" alt="Lugares"> <strong>Lugares:</strong> 5</li>
+                    <li><img src="images/icons/drivetrain-icono.png" alt="Tracção"> <strong>Tracção:</strong> Tracção dianteira</li>
                 </ul>
             </div>
+            
 
             <!-- Admin's Take Section -->
             <div class="admin-take">
-                <h3>Opinião do Administrador</h3>
-                <p>Este Mercedes-Benz A-Class é uma excelente opção para quem procura um carro compacto de luxo, com uma ótima combinação de performance e eficiência de combustível. O modelo de 2020 oferece tecnologia de ponta e conforto interior.</p>
+                <h3>Opinião do Especialista</h3>
+                <div class="admin-profile">
+                    <img src="images/Fernando-Camelo-Almeida.jpg" alt="Foto do João">
+                    <p>Este Mercedes-Benz A-Class é uma excelente opção para quem procura um carro compacto de luxo, com uma ótima combinação de performance e eficiência de combustível. O modelo de 2020 oferece tecnologia de ponta e conforto interior.</p>
+                </div>
             </div>
+            
 
             <!-- Comment Section -->
             <div class="comment-section">
                 <h3>Comentários</h3>
-                <div class="comment">
-                    <strong>Pedro:</strong> Este carro está disponível para test-drive?
+            
+                <!-- New Comment Box -->
+                <div class="add-comment">
+                    <input type="text" placeholder="Adicione um comentário..." />
+                    <button>Enviar</button>
                 </div>
+            
+                <!-- Comments List -->
                 <div class="comment">
-                    <strong>Maria:</strong> Está interessado em uma troca por um BMW?
+                    <div class="comment-header">
+                        <strong class="user-name">João</strong> <span class="comment-time">• 10 min atrás</span>
+                    </div>
+                    <p>Este Mercedes está com uma ótima quilometragem para o ano, muito bem conservado!</p>
+                    <div class="comment-footer">
+                        <span class="upvote">👍 5</span>
+                        <a href="#" class="reply-link">Responder</a>
+                    </div>
+                </div>
+            
+                <div class="comment">
+                    <div class="comment-header">
+                        <strong class="user-name">Francisco</strong> <span class="comment-time">• 30 min atrás</span>
+                    </div>
+                    <p>adoro, só não compro porque não tenho dinheiro</p>
+                    <div class="comment-footer">
+                        <span class="upvote">👍 8</span>
+                        <a href="#" class="reply-link">Responder</a>
+                    </div>
+                </div>
+            
+                <div class="comment">
+                    <div class="comment-header">
+                        <strong class="user-name">Manuela</strong> <span class="comment-time">• 1 hora atrás</span>
+                    </div>
+                    <p>É possível financiar este veículo? Estou muito interessada.</p>
+                    <div class="comment-footer">
+                        <span class="upvote">👍 3</span>
+                        <a href="#" class="reply-link">Responder</a>
+                    </div>
                 </div>
             </div>
+            
 
             <!-- Related Cars Section -->
             <div class="related-cars">
                 <h3>Carros Relacionados</h3>
                 <div class="related-cars-grid">
                     <div class="car-card">
-                        <img src="images/car2-small.jpg" alt="Car Image">
+                        <img src="images/series3.jpg" alt="Car Image">
                         <div class="car-info">
                             <h3>BMW Série 3</h3>
                             <p>€55,000</p>
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/car3-small.jpg" alt="Car Image">
+                        <img src="images/audia4.jpg" alt="Car Image">
                         <div class="car-info">
                             <h3>Audi A4</h3>
                             <p>€35,000</p>
                         </div>
                     </div>
-                    <!-- Add more related cars -->
+                    <div class="car-card">
+                        <img src="images/classc.jpg" alt="Car Image">
+                        <div class="car-info">
+                            <h3>Mercedes C-Class</h3>
+                            <p>€45,000</p>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/volvos60.jpg" alt="Car Image">
+                        <div class="car-info">
+                            <h3>Volvo S60</h3>
+                            <p>€40,000</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
