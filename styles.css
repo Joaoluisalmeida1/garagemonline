@@ -1699,11 +1699,14 @@ about
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    max-width: 250px; /* Max width to control card size */
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
 .auction-card:hover {
@@ -1714,13 +1717,45 @@ about
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
 }
 
 .auction-card img:hover {
     opacity: 0.9;
+    border: 1px solid var(--primary-color);
+    transform: scale(1.05);
 }
+
+/* Ensures the car name does not push down other content */
+.car-name {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+/* Bid as Button */
+.bid-button {
+    background-color: var(--button-bg-color);
+    color: var(--white-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bid-button:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
 
 /* Auction Info */
 .auction-info {
@@ -1739,12 +1774,6 @@ about
     margin-bottom: 8px;
 }
 
-.current-bid {
-    font-size: 16px;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
 /* Auction Timer */
 .auction-timer {
     background-color: var(--primary-color);
@@ -1759,6 +1788,19 @@ about
 
 .auction-timer:hover {
     background-color: var(--button-bg-hover-color);
+}
+
+/* Extra Info Styling */
+.extra-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Grid Layout */
+.auctions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 /* Responsive Layout */
