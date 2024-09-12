@@ -126,6 +126,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Open modal
+function openModal(card) {
+    const modal = document.getElementById('carModal');
+    const modalImage = document.getElementById('modal-image');
+    const modalDetails = document.getElementById('modal-details');
+    
+    // Get data from clicked card
+    const imageSrc = card.querySelector('img').src;
+    const carName = card.querySelector('.car-name').innerText;
+    const bid = card.querySelector('.bid-button').innerText;
+    const year = card.querySelector('.extra-info p:nth-child(1)').innerText;
+    const mileage = card.querySelector('.extra-info p:nth-child(2)').innerText;
+    const location = card.querySelector('.extra-info p:nth-child(3)').innerText;
+    const reserve = card.querySelector('.reserve-price').innerText;
+    
+    // Fill modal with data
+    modalImage.src = imageSrc;
+    modalDetails.innerHTML = `
+        <h3>${carName}</h3>
+        <p><strong>${bid}</strong></p>
+        <p>${year}</p>
+        <p>${mileage}</p>
+        <p>${location}</p>
+        <p>${reserve}</p>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.getElementById('carModal');
+    modal.style.display = 'none';
+}
 
 
 

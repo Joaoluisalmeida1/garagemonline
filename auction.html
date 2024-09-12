@@ -41,135 +41,205 @@
             
             <div class="auctions-grid">
                 <!-- Auction Card 1 -->
-                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa">
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
                     <img src="images/classc.jpg" alt="Car Image">
                     <div class="auction-info">
-                        <h3 class="car-name">2018 Mercedes-Benz C-Class</h3>
-                        <button class="bid-button">Preço atual: €25,000</button>
-                        <div class="auction-timer" data-time="7200">01:59:53</div>
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
                         <div class="extra-info">
                             <p><strong>Ano:</strong> 2018</p>
                             <p><strong>Kilometragem:</strong> 50,000 km</p>
                             <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
                         </div>
                     </div>
                 </div>
-        
-                <!-- Auction Card 2 -->
-                <div class="auction-card" data-reserve="true" data-listed="5" data-mileage="45000" data-location="Porto">
-                    <img src="images/series3.jpg" alt="Car Image">
+                        
+                <!-- More auction cards -->
+                <!-- Repeat similar structure for each auction card -->
+                 <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
                     <div class="auction-info">
-                        <h3 class="car-name">2019 BMW Série 3</h3>
-                        <button class="bid-button">Preço atual: €30,000</button>
-                        <div class="auction-timer" data-time="10800">02:59:53</div>
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
                         <div class="extra-info">
-                            <p><strong>Ano:</strong> 2019</p>
-                            <p><strong>Kilometragem:</strong> 45,000 km</p>
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
+                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
+                        <div class="extra-info">
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
+                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
+                        <div class="extra-info">
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
+                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
+                        <div class="extra-info">
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
+                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €25,000</button>
+                        <div class="auction-timer" data-time="7200">01:58:25</div>
+                        <div class="extra-info">
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
+                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €15,000</button>
+                        <div class="auction-timer" data-time="7200">00:58:25</div>
+                        <div class="extra-info">
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
                             <p><strong>Localização:</strong> Porto, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
                         </div>
                     </div>
                 </div>
-        
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
+                <!-- Auction Card 1 -->
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa" onclick="openModal(this)">
+                    <img src="images/classc.jpg" alt="Car Image">
                     <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
+                        <h3 class="car-name">Mercedes-Benz C-Class</h3>
+                        <button class="bid-button">Preço Atual: €35,000</button>
+                        <div class="auction-timer" data-time="7200">04:58:25</div>
                         <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
+                            <p><strong>Ano:</strong> 2018</p>
+                            <p><strong>Kilometragem:</strong> 50,000 km</p>
                             <p><strong>Localização:</strong> Lisboa, Portugal</p>
+                            <p class="reserve-price">Preço Mínimo: €30,000</p>
+                        </div>
+                        <!-- Extra details to show on hover -->
+                        <div class="hover-info">
+                            <p><strong>Combustível:</strong> Diesel</p>
+                            <p><strong>Transmissão:</strong> Automático</p>
+                            <p><strong>Estado:</strong> Usado</p>
                         </div>
                     </div>
                 </div>
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
-                    <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
-                        <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
-                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
-                    <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
-                        <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
-                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
-                    <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
-                        <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
-                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
-                    <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
-                        <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
-                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Auction Card 3 -->
-                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
-                    <img src="images/audia4.jpg" alt="Car Image">
-                    <div class="auction-info">
-                        <h3 class="car-name">2020 Audi A4</h3>
-                        <button class="bid-button">Preço atual: €35,000</button>
-                        <div class="auction-timer" data-time="14400">03:59:53</div>
-                        <div class="extra-info">
-                            <p><strong>Ano:</strong> 2020</p>
-                            <p><strong>Kilometragem:</strong> 30,000 km</p>
-                            <p><strong>Localização:</strong> Lisboa, Portugal</p>
-                        </div>
-                    </div>
-                </div>
-        
-    
-
-                
-
-
-
             </div>
         </div>
+        
+        <!-- Modal for showing more details -->
+        <div id="carModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Car Details</h2>
+                <img id="modal-image" src="" alt="Car Image">
+                <div id="modal-details"></div>
+            </div>
+        </div>
+        
     </main>
     
+
 
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Garagem Online. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                    <img src="images/twitter.png" alt="Twitter">
+                </a>
+                <a href="mailto:youremail@example.com" class="social-icon">
+                    <img src="images/email-icon.png" alt="Email">
+                </a>
+            </div>
+            <p>&copy; 2024 Garagem Virtual. Todos os direitos reservados.</p>
         </div>
     </footer>
 
