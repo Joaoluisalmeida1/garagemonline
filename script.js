@@ -51,6 +51,84 @@ window.onload = function() {
     startAuctionTimers();
 };
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const auctionsGrid = document.querySelector('.auctions-grid');
+    const auctionCards = Array.from(document.querySelectorAll('.auction-card'));
+
+    // Attach click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterType = button.getAttribute('data-filter');
+            sortAuctions(filterType);
+        });
+    });
+
+    function sortAuctions(filterType) {
+        let sortedCards;
+
+        switch (filterType) {
+            case 'ending-soon':
+                // Sort by time remaining (ascending)
+                sortedCards = auctionCards.sort((a, b) => {
+                    const timeA = parseInt(a.querySelector('.auction-timer').getAttribute('data-time'), 10);
+                    const timeB = parseInt(b.querySelector('.auction-timer').getAttribute('data-time'), 10);
+                    return timeA - timeB; // Sort by smallest time first (ending soonest)
+                });
+                break;
+
+            case 'no-reserve':
+                // Sort by no reserve (those with no reserve come first)
+                sortedCards = auctionCards.sort((a, b) => {
+                    const reserveA = a.getAttribute('data-reserve') === 'true' ? 1 : 0;
+                    const reserveB = b.getAttribute('data-reserve') === 'true' ? 1 : 0;
+                    return reserveA - reserveB; // No reserve (false) should come first
+                });
+                break;
+
+            case 'newly-listed':
+                // Sort by newly listed (ascending, more recently listed come first)
+                sortedCards = auctionCards.sort((a, b) => {
+                    const listedA = parseInt(a.getAttribute('data-listed'), 10);
+                    const listedB = parseInt(b.getAttribute('data-listed'), 10);
+                    return listedA - listedB; // Sort by smaller number of days listed
+                });
+                break;
+
+            case 'lowest-mileage':
+                // Sort by mileage (ascending, lowest mileage first)
+                sortedCards = auctionCards.sort((a, b) => {
+                    const mileageA = parseInt(a.getAttribute('data-mileage'), 10);
+                    const mileageB = parseInt(b.getAttribute('data-mileage'), 10);
+                    return mileageA - mileageB; // Sort by lowest mileage first
+                });
+                break;
+
+            case 'closest-to-me':
+                // Sort by location (Lisboa first for this example)
+                const userLocation = 'Porto'; // You can dynamically set this based on user location
+                sortedCards = auctionCards.sort((a, b) => {
+                    const locationA = a.getAttribute('data-location') === userLocation ? 0 : 1;
+                    const locationB = b.getAttribute('data-location') === userLocation ? 0 : 1;
+                    return locationA - locationB; // Lisboa comes first
+                });
+                break;
+
+            default:
+                // No sorting applied if none of the filter buttons match
+                sortedCards = auctionCards;
+        }
+
+        // Clear the existing grid and append sorted cards
+        auctionsGrid.innerHTML = '';
+        sortedCards.forEach(card => auctionsGrid.appendChild(card));
+    }
+});
+
+
+
+
 // Kilometers Range Slider (dual handle)
 const kmsSlider = document.getElementById('kms-range');
 noUiSlider.create(kmsSlider, {
@@ -428,6 +506,7 @@ document.querySelectorAll('.favorite-button').forEach(button => {
 function changeImage(src) {
     document.getElementById('main-image').src = src;
 }
+
 
 
 

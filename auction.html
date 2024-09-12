@@ -16,9 +16,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="auctions.html">Leilões</a></li>
+                    <li><a href="forum.html">Fórum</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Carros Vendidos</a></li>
                     <li><a href="#" class="login-button">Login</a></li>
                 </ul>
             </nav>
@@ -29,10 +29,18 @@
     <main>
         <div class="container auctions-container">
             <h2 class="auction-header">Leilões Atuais</h2>
+    
+            <!-- Filter Section -->
+            <div class="filter-bar">
+                <button class="filter-button" data-filter="ending-soon">Acabar em Breve</button>
+                <button class="filter-button" data-filter="no-reserve">Sem Reserva</button>
+                <button class="filter-button" data-filter="newly-listed">Mais Tempo</button>
+                <button class="filter-button" data-filter="lowest-mileage">Menos Kms</button>
+                <button class="filter-button" data-filter="closest-to-me">Mais próximos</button>
+            </div>
             
             <div class="auctions-grid">
-                <!-- Auction Card 1 -->
-                <div class="auction-card">
+                <div class="auction-card" data-reserve="false" data-listed="2" data-mileage="50000" data-location="Lisboa">
                     <img src="images/classc.jpg" alt="Car Image">
                     <div class="auction-info">
                         <h3>2018 Mercedes-Benz C-Class</h3>
@@ -41,9 +49,8 @@
                         <p>Lisboa, Portugal</p>
                     </div>
                 </div>
-                
-                <!-- Auction Card 2 -->
-                <div class="auction-card">
+    
+                <div class="auction-card" data-reserve="true" data-listed="5" data-mileage="45000" data-location="Porto">
                     <img src="images/series3.jpg" alt="Car Image">
                     <div class="auction-info">
                         <h3>2019 BMW Série 3</h3>
@@ -52,9 +59,8 @@
                         <p>Porto, Portugal</p>
                     </div>
                 </div>
-
-                <!-- Auction Card 3 -->
-                <div class="auction-card">
+    
+                <div class="auction-card" data-reserve="false" data-listed="3" data-mileage="30000" data-location="Lisboa">
                     <img src="images/audia4.jpg" alt="Car Image">
                     <div class="auction-info">
                         <h3>2020 Audi A4</h3>
@@ -63,9 +69,8 @@
                         <p>Lisboa, Portugal</p>
                     </div>
                 </div>
-
-                <!-- Auction Card 4 -->
-                <div class="auction-card">
+    
+                <div class="auction-card" data-reserve="true" data-listed="1" data-mileage="20000" data-location="Porto">
                     <img src="images/volvos60.jpg" alt="Car Image">
                     <div class="auction-info">
                         <h3>2017 Volvo S60</h3>
@@ -74,9 +79,35 @@
                         <p>Porto, Portugal</p>
                     </div>
                 </div>
+
+                <div class="auction-card" data-reserve="true" data-listed="1" data-mileage="20000" data-location="Porto">
+                    <img src="images/volvos60.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3>2017 Volvo S60</h3>
+                        <p>Bid: €40,000</p>
+                        <div class="auction-timer" data-time="18000">00:00:00</div>
+                        <p>Porto, Portugal</p>
+                    </div>
+                </div>
+
+                <div class="auction-card" data-reserve="true" data-listed="1" data-mileage="20000" data-location="Porto">
+                    <img src="images/volvos60.jpg" alt="Car Image">
+                    <div class="auction-info">
+                        <h3>2017 Volvo S60</h3>
+                        <p>Bid: €40,000</p>
+                        <div class="auction-timer" data-time="18000">00:00:00</div>
+                        <p>Porto, Portugal</p>
+                    </div>
+                </div>
+
+                
+
+
+
             </div>
         </div>
     </main>
+    
 
     <!-- Footer Section -->
     <footer>
