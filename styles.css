@@ -1033,7 +1033,7 @@ select {
     padding: 8px; /* Add some padding */
     border-radius: 5px; /* Rounded corners */
     color: var(--text-color); /* Ensure text color is visible */
-    width: 100%; /* Make sure it expands to the container width */
+    width: 20%; /* Make sure it expands to the container width */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for some depth */
 }
 
