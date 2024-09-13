@@ -301,7 +301,7 @@ output {
 /* Search Button */
 
 .search-button {
-    background-color: var(--primary-color);
+    background-color: var(--button-bg-color);
     color: var(--white-color);
     padding: 10px 20px;
     border: none;
@@ -1929,4 +1929,89 @@ about
     .auctions-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+/* Login/Register Container */
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles */
+.login-title, .register-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Form Labels */
+.login-label, .register-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Form Inputs */
+.login-input, .register-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+/* Select Box for Account Type */
+.register-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.login-button, .register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
+/* Toggle Register Button */
+.register-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0;
+}
+
+.register-toggle:hover {
+    text-decoration: underline;
+}
+
+/* Seller Fields (Visible only when "Professional" is selected) */
+.seller-fields {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--white-color);
+    border-radius: 5px;
 }

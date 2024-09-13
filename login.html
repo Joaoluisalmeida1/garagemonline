@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Garagem Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header will be dynamically loaded -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>Garagem Online<span class="dot">.</span></h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html">Fórum</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="auction.html"><button class="auction-button">Ir para Leilões</button></a></li>
+                    <li><a href="login.html" class="login-button">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <h2 class="login-title">Login</h2>
+        <form id="loginForm" class="login-form">
+            <label for="email" class="login-label">Email:</label>
+            <input type="email" id="email" name="email" class="login-input" required>
+            
+            <label for="password" class="login-label">Password:</label>
+            <input type="password" id="password" name="password" class="login-input" required>
+            
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <p>Ainda não tem conta? <button id="toggleRegisterForm" class="register-toggle">Criar conta</button></p>
+    </div>
+
+    <!-- Register Section (Initially hidden) -->
+    <div class="register-container" id="registerContainer" style="display: none;">
+        <h2 class="register-title">Criar Conta</h2>
+        <form id="registerForm" class="register-form">
+            <!-- Common Fields -->
+            <label for="name" class="register-label">Nome:</label>
+            <input type="text" id="name" name="name" class="register-input" required>
+
+            <label for="email" class="register-label">Email:</label>
+            <input type="email" id="registerEmail" name="email" class="register-input" required>
+            
+            <label for="password" class="register-label">Palavra-passe:</label>
+            <input type="password" id="registerPassword" name="password" class="register-input" required>
+            
+            <!-- Option to register as User or Seller -->
+            <label for="accountType" class="register-label">Criar conta como:</label>
+            <select id="accountType" name="accountType" class="register-select" required>
+                <option value="user">Utilizador normal</option>
+                <option value="seller">Profissional</option>
+            </select>
+
+            <!-- Seller fields (Initially hidden) -->
+            <div id="sellerFields" class="seller-fields" style="display: none;">
+                <label for="dealership" class="register-label">Nome da Empresa:</label>
+                <input type="text" id="dealership" name="dealership" class="register-input">
+                
+                <label for="invitationCode" class="register-label">Código de Convite:</label>
+                <input type="text" id="invitationCode" name="invitationCode" class="register-input">
+                
+                <p>O seu pedido de criação de conta ficará pendente da aprovação do admnistrador. Receberá um email quando o pedido for aprovado.</p>
+            </div>
+
+            <button type="submit" class="register-button">Registar</button>
+        </form>
+    </div>
+
+    <script>
+        // Toggle registration form visibility and hide the login form
+        document.getElementById('toggleRegisterForm').addEventListener('click', function() {
+            const registerForm = document.getElementById('registerContainer');
+            const loginForm = document.querySelector('.login-container');
+            
+            // Hide the login form and show the register form
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+        });
+
+        // Show or hide seller fields based on account type
+        document.getElementById('accountType').addEventListener('change', function() {
+            const sellerFields = document.getElementById('sellerFields');
+            if (this.value === 'seller') {
+                sellerFields.style.display = 'block';
+            } else {
+                sellerFields.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
