@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postar Anúncio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>Garagem Online<span class="dot">.</span></h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="forum.html">Fórum</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="auction.html"><button class="auction-button">Ir para Leilões</button></a></li>
+                    <li><a href="login.html" class="login-button">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+
+     <main class="place-ad-main">
+        <div class="place-ad-container">
+            <h2 class="place-ad-title">Colocar Novo Anúncio de Carro</h2>
+    
+            <form id="placeAdForm" class="place-ad-form">
+                <!-- General Car Information -->
+                <h3 class="place-ad-section-title">Informações Gerais</h3>
+                
+                <label for="marca" class="place-ad-label">Marca:</label>
+                <input type="text" id="marca" name="marca" class="place-ad-input" required>
+    
+                <label for="modelo" class="place-ad-label">Modelo:</label>
+                <input type="text" id="modelo" name="modelo" class="place-ad-input" required>
+    
+                <label for="ano" class="place-ad-label">Ano de Fabrico:</label>
+                <input type="number" id="ano" name="ano" class="place-ad-input" min="1900" max="2024" required>
+    
+                <label for="preco" class="place-ad-label">Preço (€):</label>
+                <input type="number" id="preco" name="preco" class="place-ad-input" required>
+    
+                <label for="quilometragem" class="place-ad-label">Quilometragem (km):</label>
+                <input type="number" id="quilometragem" name="quilometragem" class="place-ad-input" required>
+    
+                <label for="localizacao" class="place-ad-label">Localização:</label>
+                <input type="text" id="localizacao" name="localizacao" class="place-ad-input" required>
+    
+                <!-- Vehicle Specifications -->
+                <h3 class="place-ad-section-title">Especificações do Veículo</h3>
+    
+                <label for="combustivel" class="place-ad-label">Tipo de Combustível:</label>
+                <select id="combustivel" name="combustivel" class="place-ad-input" required>
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Elétrico">Elétrico</option>
+                    <option value="Híbrido">Híbrido</option>
+                </select>
+    
+                <label for="transmissao" class="place-ad-label">Transmissão:</label>
+                <select id="transmissao" name="transmissao" class="place-ad-input" required>
+                    <option value="Automático">Automático</option>
+                    <option value="Manual">Manual</option>
+                </select>
+    
+                <label for="portas" class="place-ad-label">Número de Portas:</label>
+                <input type="number" id="portas" name="portas" class="place-ad-input" min="2" max="5" required>
+    
+                <label for="potencia" class="place-ad-label">Potência (cv):</label>
+                <input type="number" id="potencia" name="potencia" class="place-ad-input" required>
+    
+                <label for="cilindrada" class="place-ad-label">Cilindrada (cm³):</label>
+                <input type="number" id="cilindrada" name="cilindrada" class="place-ad-input" required>
+    
+                <label for="cor" class="place-ad-label">Cor:</label>
+                <input type="text" id="cor" name="cor" class="place-ad-input" required>
+    
+                <!-- Features -->
+                <h3 class="place-ad-section-title">Funcionalidades Adicionais</h3>
+
+                <!-- Interior Features -->
+                <h4 class="place-ad-subsection-title">Interior</h4>
+
+                <label for="ar_condicionado" class="place-ad-label">Ar Condicionado:</label>
+                <select id="ar_condicionado" name="ar_condicionado" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="bancos_pele" class="place-ad-label">Bancos em Pele:</label>
+                <select id="bancos_pele" name="bancos_pele" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="aquecimento_bancos" class="place-ad-label">Aquecimento dos Bancos:</label>
+                <select id="aquecimento_bancos" name="aquecimento_bancos" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="teto_solar" class="place-ad-label">Teto Solar:</label>
+                <select id="teto_solar" name="teto_solar" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="volante_multifuncoes" class="place-ad-label">Volante Multifunções:</label>
+                <select id="volante_multifuncoes" name="volante_multifuncoes" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <!-- Exterior Features -->
+                <h4 class="place-ad-subsection-title">Exterior</h4>
+
+                <label for="jantes_liga_leve" class="place-ad-label">Jantes de Liga Leve:</label>
+                <select id="jantes_liga_leve" name="jantes_liga_leve" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="faróis_xenon" class="place-ad-label">Faróis de Xenon:</label>
+                <select id="faróis_xenon" name="faróis_xenon" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="pintura_metalizada" class="place-ad-label">Pintura Metalizada:</label>
+                <select id="pintura_metalizada" name="pintura_metalizada" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <!-- Technology Features -->
+                <h4 class="place-ad-subsection-title">Tecnologia</h4>
+
+                <label for="gps" class="place-ad-label">Sistema de Navegação (GPS):</label>
+                <select id="gps" name="gps" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="sensores_estacionamento" class="place-ad-label">Sensores de Estacionamento:</label>
+                <select id="sensores_estacionamento" name="sensores_estacionamento" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="camara_traseira" class="place-ad-label">Câmara de Marcha Atrás:</label>
+                <select id="camara_traseira" name="camara_traseira" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="bluetooth" class="place-ad-label">Bluetooth:</label>
+                <select id="bluetooth" name="bluetooth" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="cruise_control" class="place-ad-label">Cruise Control:</label>
+                <select id="cruise_control" name="cruise_control" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <!-- Safety Features -->
+                <h4 class="place-ad-subsection-title">Segurança</h4>
+
+                <label for="abs" class="place-ad-label">Sistema de Travagem (ABS):</label>
+                <select id="abs" name="abs" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="airbags" class="place-ad-label">Airbags:</label>
+                <select id="airbags" name="airbags" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="assistencia_faixa" class="place-ad-label">Assistência de Faixa:</label>
+                <select id="assistencia_faixa" name="assistencia_faixa" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="travagem_automatica" class="place-ad-label">Travagem Automática de Emergência:</label>
+                <select id="travagem_automatica" name="travagem_automatica" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="detetor_angulos_mortos" class="place-ad-label">Detetor de Ângulos Mortos:</label>
+                <select id="detetor_angulos_mortos" name="detetor_angulos_mortos" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <label for="controlo_estabilidade" class="place-ad-label">Controlo de Estabilidade (ESP):</label>
+                <select id="controlo_estabilidade" name="controlo_estabilidade" class="place-ad-input">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+
+                <!-- Image Upload -->
+                <h3 class="place-ad-section-title">Submeter Imagens</h3>
+    
+                <label for="carImages" class="place-ad-label">Imagens do Carro:</label>
+                <input type="file" id="carImages" name="carImages" class="place-ad-input" accept="image/*" multiple required>
+    
+                <!-- Description -->
+                <h3 class="place-ad-section-title">Descrição do Carro</h3>
+    
+                <label for="descricao" class="place-ad-label">Descrição:</label>
+                <textarea id="descricao" name="descricao" class="place-ad-input" rows="4" required></textarea>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="place-ad-submit-button">Publicar Anúncio</button>
+            </form>
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Garagem Online. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

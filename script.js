@@ -1,5 +1,9 @@
 // Placeholder JavaScript for future interactivity
 console.log('Car Marketplace Loaded');
+
+
+
+
 // Timer function for auctions
 function startAuctionTimers() {
     const timers = document.querySelectorAll('.auction-timer');
@@ -540,10 +544,4 @@ document.querySelectorAll('.favorite-button').forEach(button => {
 function changeImage(src) {
     document.getElementById('main-image').src = src;
 }
-
-
-
-
-
-
 

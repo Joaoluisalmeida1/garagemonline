@@ -2015,3 +2015,71 @@ about
     background-color: var(--white-color);
     border-radius: 5px;
 }
+
+
+
+/* PLACING ADS */
+
+
+.place-ad-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.place-ad-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Section Titles */
+.place-ad-section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Form Elements */
+.place-ad-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.place-ad-form .place-ad-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.place-ad-submit-button {
+    background-color: var(--button-bg-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+.place-ad-submit-button:hover {
+    background-color: var(--button-bg-hover-color);
+}
+
