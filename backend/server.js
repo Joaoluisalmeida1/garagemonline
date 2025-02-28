@@ -3,14 +3,25 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
+const userRoutes = require('./routes/user.routes');
+const listingsRoutes = require('./routes/listings.routes');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
-// Enable CORS for all routes
+// Logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
+// CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000', // Your React app URL
+  origin: 'http://localhost:3000', // Your frontend URL
   credentials: true
 }));
+
 app.use(express.json());
 
 // Add request logging
@@ -196,10 +207,66 @@ app.put('/api/users/profile', authenticateToken, (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Routes
+app.use('/api/users', userRoutes);
+app.use('/api/listings', listingsRoutes);
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Test endpoints to verify routing
+app.get('/api/users/:id/stats', (req, res) => {
+  // Temporary test response
+  res.json({
+    activeListings: 0,
+    totalViews: 0
+  });
+});
+
+app.get('/api/listings/user/:id', (req, res) => {
+  // Temporary test response
+  res.json([]);
+});
+
+// Test route
+app.get('/test', (req, res) => {
+  res.json({ message: 'Backend is working!' });
+});
+
+// Create uploads directory if it doesn't exist
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
+// Serve uploaded files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Error handling
+app.use((err, req, res, next) => {
+  console.error('Error:', err);
+  res.status(500).json({ message: 'Internal server error', error: err.message });
+});
+
+const PORT = process.env.PORT || 3002;
+const server = app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+  console.log(`Test endpoint: http://localhost:${PORT}/test`);
+  console.log(`Health check: http://localhost:${PORT}/api/health`);
+  console.log(`User stats endpoint: http://localhost:${PORT}/api/users/:id/stats`);
+  console.log(`User listings endpoint: http://localhost:${PORT}/api/listings/user/:id`);
   console.log('Test user credentials:');
   console.log('Email: test@example.com');
   console.log('Password: test123');
+  console.log('Available routes:');
+  console.log('POST /api/listings - Create listing');
+  console.log('GET /api/listings - Get all listings');
+  console.log('GET /api/listings/:id - Get listing by ID');
+  console.log('GET /api/listings/user/:id - Get user listings');
+});
+
+// Handle server errors
+server.on('error', (error) => {
+  console.error('Server error:', error);
 }); 

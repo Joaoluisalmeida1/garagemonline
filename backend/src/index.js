@@ -6,8 +6,22 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Erro interno do servidor' });
+});
+
+// Route organization
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/vehicles', require('./routes/vehicles'));
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI, {
